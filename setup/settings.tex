@@ -1,0 +1,775 @@
+% !TeX root = ../main.tex
+
+% --------------------------------------------------
+% 論文資訊設定
+% --------------------------------------------------
+
+% 學位類型設定
+\ifthenelse{\equal{\thesisDegreeType}{BA}}{
+    \newcommand{\thesisDegreeZHTW}{\thesisDegreeBachelorZHTW}
+    \newcommand{\thesisDegreeEN}{\thesisDegreeBachelorEN}
+    \newcommand{\thesisConferredDegree}{\thesisConferredDegreeBachelor}
+}{}
+
+\ifthenelse{\equal{\thesisDegreeType}{MA}}{
+    \newcommand{\thesisDegreeZHTW}{\thesisDegreeMasterZHTW}
+    \newcommand{\thesisDegreeEN}{\thesisDegreeMasterEN}
+    \newcommand{\thesisConferredDegree}{\thesisConferredDegreeMaster}
+}{}
+
+\ifthenelse{\equal{\thesisDegreeType}{PHD}}{
+    \newcommand{\thesisDegreeZHTW}{\thesisDegreeDoctorZHTW}
+    \newcommand{\thesisDegreeEN}{\thesisDegreeDoctorEN}
+    \newcommand{\thesisConferredDegree}{\thesisConferredDegreeDoctor}
+}{}
+
+% --------------------------------------------------
+% 語言與字體設定
+% --------------------------------------------------
+% - \setmainfont{}          	襯線字體
+% - \setsansfont{}          	非襯字體
+% - \setmonofont{}          	等寬字體
+% - \setCJKmainfont{}			中文襯線字體
+% - \setCJKsansfont{}			中文非襯字體
+% - \setCJKmonofont{}			中文等寬字體
+% --------------------------------------------------
+
+% 預設中文字體(CJK)設定
+\xeCJKsetup{
+    AutoFakeBold=true, % 沒有給定粗體時使用偽粗體
+    EmboldenFactor=2.5, % 偽粗體的粗度
+    AutoFakeSlant=true, % 沒有給定斜體時使用偽斜體
+    SlantFactor=0.2, % 偽斜體的斜度
+}
+
+\setCJKmainfont[
+    Path = \thesisFontsPathZHTW ,
+    Extension = .ttf ,
+]{ \thesisFontsZHTW }
+
+% 預設英文字體設定
+\setmainfont[
+    Path = \thesisFontsPathEN ,
+    Extension = .ttf ,
+    BoldFont = *-Bold ,
+    ItalicFont = *-Italic ,
+    BoldItalicFont = *-BoldItalic,
+]{Times New Roman}
+
+% 撰寫語言選項
+\ifthenelse{\equal{\thesisUseZHTW}{Y}}{
+    % polyglossia 設定主次要語言
+    % \setmainlanguage{chinese}  % 中文作為主要語言
+    % \setotherlanguage{english} % 添加其他語言：英文
+
+    % \newfontface\cjkfont[
+    %     Path = \thesisFontsPathZHTW, % 字體路徑
+    %     Extension = .ttf ,
+    % ]{ \thesisFontsZHTW } % 指定 CJK 字體
+
+    % \newfontface\cjkfontsf[
+    %     Path = \thesisFontsPathZHTW, % 字體路徑
+    %     Extension = .ttf ,
+    % ]{ \thesisFontsZHTW } % 指定 CJK 字體
+
+    % \newfontface\cjkfonttt[
+    %     Path = \thesisFontsPathZHTW, % 字體路徑
+    %     Extension = .ttf ,
+    % ]{ \thesisFontsZHTW } % 指定 CJK 字體
+
+    % 繁體中文章節、標題、目錄等用詞
+    \newcommand{\thesisOralExamApproval}{\thesisOralExamApprovalZHTW}
+    \newcommand{\thesisTableOfContents}{\thesisTableOfContentsZHTW}
+    \newcommand{\thesisListOfFigures}{\thesisListOfFiguresZHTW}
+    \newcommand{\thesisListOfTables}{\thesisListOfTablesZHTW}
+    \newcommand{\thesisDenotation}{\thesisDenotationZHTW}
+    \newcommand{\thesisAcknowledgementTitle}{\thesisAcknowledgementTitleZHTW}
+
+    \newcommand{\thesisChapterTitle}{\thesisChapterTitleZHTW}
+    \newcommand{\thesisChapterTitleToc}{\thesisChapterTitleTocZHTW}
+
+    \newcommand{\thesisBibliographyTitle}{\thesisBibliographyTitleZHTW}
+    \newcommand{\thesisAppendixTitle}{\thesisAppendixTitleZHTW}
+
+    \newcommand{\thesisFigureName}{\thesisFigureNameZHTW}
+    \newcommand{\thesisTableName}{\thesisTableNameZHTW}
+
+    % 中文目錄排版單位(保留)
+
+}{
+    % polyglossia 設定主次要語言
+    % \setmainlanguage{english}  % 英文作為主要語言
+    % \setotherlanguage{chinese} % 添加其他語言：中文
+
+    % \newfontface\cjkfont[
+    %     Path = \thesisFontsPathZHTW, % 字體路徑
+    %     Extension = .ttf ,
+    % ]{ \thesisFontsZHTW } % 指定 CJK 字體
+
+    % \newfontface\cjkfontsf[
+    %     Path = \thesisFontsPathZHTW, % 字體路徑
+    %     Extension = .ttf ,
+    % ]{ \thesisFontsZHTW } % 指定 CJK 字體
+
+    % \newfontface\cjkfonttt[
+    %     Path = \thesisFontsPathZHTW, % 字體路徑
+    %     Extension = .ttf ,
+    % ]{ \thesisFontsZHTW } % 指定 CJK 字體
+
+    % 英文章節、標題、目錄等用詞
+    \newcommand{\thesisOralExamApproval}{\thesisOralExamApprovalEN}
+    \newcommand{\thesisTableOfContents}{\thesisTableOfContentsEN}
+    \newcommand{\thesisListOfFigures}{\thesisListOfFiguresEN}
+    \newcommand{\thesisListOfTables}{\thesisListOfTablesEN}
+    \newcommand{\thesisDenotation}{\thesisDenotationEN}
+    \newcommand{\thesisAcknowledgementTitle}{\thesisAcknowledgementTitleEN}
+
+    \newcommand{\thesisChapterTitle}{\thesisChapterTitleEN}
+    \newcommand{\thesisChapterTitleToc}{\thesisChapterTitleTocEN}
+
+    \newcommand{\thesisBibliographyTitle}{\thesisBibliographyTitleEN}
+    \newcommand{\thesisAppendixTitle}{\thesisAppendixTitleEN}
+
+    \newcommand{\thesisFigureName}{\thesisFigureNameEN}
+    \newcommand{\thesisTableName}{\thesisTableNameEN}
+
+    % 英文目錄排版單位(保留)
+
+}
+
+% --------------------------------------------------
+% 版面設定
+% --------------------------------------------------
+
+% geometry 初始版面設定
+\geometry{
+    paper=a4paper,
+    includehead, % 將 headheight headsep 計入 top
+    headheight=2cm,
+    headsep=1cm,
+    top=1cm,
+    includefoot,
+    bottom=3cm,
+    left=3cm,
+    right=3cm,
+}
+
+% 顯示邊界線選項設定
+\ifthenelse{\equal{\thesisShowBoardLine}{Y}}{
+    \usepackage{showframe}
+}{}
+
+% --------------------------------------------------
+% 前頁內容設定
+% --------------------------------------------------
+
+% 製作封面指令
+\newcommand{\thesisMakeCoverPage}{
+    \begin{titlepage}
+        \begin{singlespace}
+            \begin{center}
+                % 校徽
+                \includegraphics[scale=0.1]{\thesisSealImage}\\
+                \vspace{10mm}
+
+                % 校系學位
+                \fontsize{26pt}{0pt}{\thesisSchoolNameZHTW}\\
+                \vspace{5mm}
+                \fontsize{26pt}{0pt}{\thesisDeptNameZHTW 系}\\
+                \vspace{5mm}
+                \fontsize{24pt}{0pt}{\thesisDegreeZHTW 論文}\\
+                \vspace{30mm}
+
+                % 題目
+                \fontsize{20pt}{0pt}{\thesisTitleZHTW}\\
+                \vspace{5mm}
+                \fontsize{20pt}{0pt}{\thesisTitleEN}\\
+                \vspace{25mm}
+
+                % 使用 @{} 調整間隔空白
+                \begin{tabular}{r@{}l}
+                    % 研究生列
+                    \fontsize{18pt}{0pt}{\makebox[6em][s]{研\hspace{\fill}究\hspace{\fill}生}：}                &
+                    \fontsize{18pt}{0pt}{\thesisAuthorNameZHTW}                                               \\[5mm]
+
+                    % 指導教授列
+                    \fontsize{18pt}{0pt}{\makebox[6em][s]{指\hspace{\fill}導\hspace{\fill}教\hspace{\fill}授}：} &
+                    \fontsize{18pt}{0pt}{\thesisAdvisorNameZHTW~博士}                                           \\[5mm]
+
+                    % 共同指導教授列
+                    \ifthenelse{\equal{\thesisHasCoAdvisor}{Y}}{
+                    \phantom{共同指導教授：}                                                                       &
+                    \fontsize{18pt}{0pt}{\thesisCoAdvisorNameZHTW~博士}                                         \\
+                    }{}
+                \end{tabular}
+
+                \vfill
+                \fontsize{20pt}{0pt}{\thesisDateZHTW}
+            \end{center}
+        \end{singlespace}
+    \end{titlepage}
+    \clearpage % 清除頁碼
+}
+
+% 製作書名頁指令
+\newcommand{\thesisMakeTitlePage}{
+    \begin{titlepage}
+        \begin{singlespace}
+            \begin{center}
+                \vspace*{5mm}
+
+                % 中英標題
+                \fontsize{16pt}{0pt}{\thesisTitleZHTW}\\
+                \vspace{5mm}
+                \fontsize{14pt}{0pt}{\thesisTitleEN}\\
+                \vspace{10mm}
+
+                % 使用 @{} 調整間隔空白
+                \begin{tabular}{l@{}l}
+                    % 研究生列
+                    \fontsize{13pt}{0pt}{\makebox[5em][s]{研\hspace{\fill}究\hspace{\fill}生}：}                  &
+                    \fontsize{13pt}{0pt}{\thesisAuthorNameZHTW}                                                 \\
+
+                    % 指導教授列
+                    \fontsize{13pt}{0pt}{{\makebox[5em][s]{指\hspace{\fill}導\hspace{\fill}教\hspace{\fill}授}：}} &
+                    \fontsize{13pt}{0pt}{\thesisAdvisorNameZHTW~博士}                                             \\
+
+                    % 共同指導教授列
+                    \ifthenelse{\equal{\thesisHasCoAdvisor}{Y}}{
+                    \fontsize{13pt}{0pt}{\makebox[5em][s]{}}                                                  &
+                    \fontsize{13pt}{0pt}{\thesisCoAdvisorNameZHTW~博士}                                           \\
+                    }{}
+                \end{tabular}
+
+                \vspace{10mm}
+
+                % 校系論文
+                \fontsize{14pt}{0pt}{
+                    \thesisSchoolNameZHTW\\
+                    \vspace{5mm}
+                    \thesisClassNameZHTW\\
+                    \vspace{5mm}
+                    \thesisDegreeZHTW 論文\\
+                }
+                \vspace{10mm}
+
+                % 學位聲明
+                \fontsize{14pt}{0pt}{
+                    A Thesis\\
+                    Presented to\\
+                    Department of \thesisDeptNameEN\\
+                    \thesisSchoolNameEN\\
+                    in Partial Fulfillment of the Requirements\\
+                    for the Degree of\\
+                    \thesisConferredDegree\\
+                    in\\
+                    \thesisDeptNameEN\\
+                }
+                \vspace{10mm}
+
+                % 日期校址
+                \fontsize{14pt}{0pt}{
+                    \thesisDateEN\\
+                    \thesisSchoolLocationEN\\
+                }
+
+                \vfill
+                \fontsize{14pt}{0pt}{\thesisDateZHTW}
+            \end{center}
+        \end{singlespace}
+    \end{titlepage}
+    \clearpage % 清除頁碼
+}
+
+% 中文摘要環境
+\newenvironment{thesisAbstractEnvZHTW}{
+    \phantomsection % 目錄超連結錨點
+    \addcontentsline{toc}{chapter}{\thesisAbstractTitleZHTW}  % 加入目錄    
+
+    \chapter*{\thesisTitleZHTW}
+    \vspace{10mm}
+
+    % 指導教授與研究生
+    \begin{center}
+        \begin{minipage}[t]{0.5\textwidth}
+            \begin{flushleft}
+                {\Large 研究生：\thesisAuthorNameZHTW}
+            \end{flushleft}
+        \end{minipage}% 要加這個不然不會並排
+        \begin{minipage}[t]{0.5\textwidth}
+            \begin{flushright}
+                \begin{tabular}[t]{l@{}l}
+                    {\Large 指導教授：} & {\Large \thesisAdvisorNameZHTW~博士}
+                    \ifthenelse{\equal{\thesisHasCoAdvisor}{Y}}{
+                    \\[5mm]
+                                   & {\Large \thesisCoAdvisorNameZHTW~博士} \\
+                    }{}
+                \end{tabular}
+            \end{flushright}
+        \end{minipage}
+    \end{center}
+
+    \vspace{5mm}
+
+    % 校與班名
+    \begin{center}
+        {\Large \thesisSchoolNameZHTW \thesisClassNameZHTW}\\
+
+        \vspace{10mm}
+
+        {\Large \thesisAbstractTitleZHTW}\\
+
+        \vspace{10mm}
+    \end{center}
+}{
+    % 需先分段 vspace 才能生效
+    \par\vspace{10mm}
+
+    % 印出中文關鍵字
+    % \noindent 取消因 \par 產生的縮排
+    % 加 % 消除 foreach 後空格
+    \noindent{\thesisKeywordTagZHTW
+        \foreach \keyword [count=\i] in \thesisKeywordsZHTW {%
+            \ifnum\i=1% 
+                \keyword%
+            \else%
+                \thesisKeywordSymbolZHTW\keyword%
+            \fi%
+        }
+    }
+
+    \pagebreak % 需改
+}
+
+% 英文摘要環境
+\newenvironment{thesisAbstractEnvEN}{
+    \phantomsection % 目錄超連結錨點
+    \addcontentsline{toc}{chapter}{\thesisAbstractTitleEN} % 加入目錄
+
+    \chapter*{\thesisTitleEN}
+    \vspace{10mm}
+
+    % 指導教授與研究生
+    \begin{center}
+        \begin{minipage}[t]{0.5\textwidth}
+            \begin{flushleft}
+                {\Large Student:~\thesisAuthorNameEN}
+            \end{flushleft}
+        \end{minipage}% 要加這個不然不會並排
+        \begin{minipage}[t]{0.5\textwidth}
+            \begin{flushright}
+                \begin{tabular}[t]{l@{}l}
+                    {\Large Advisor:} & {\Large ~Dr.~\thesisAdvisorNameEN}
+                    \ifthenelse{\equal{\thesisHasCoAdvisor}{Y}}{
+                    \\[5mm]
+                                      & {\Large ~Dr.~\thesisCoAdvisorNameEN} \\
+                    }{}
+                \end{tabular}
+            \end{flushright}
+        \end{minipage}
+    \end{center}
+
+    \vspace{5mm}
+
+    % 校與班名
+    \begin{center}
+        {\large \thesisClassNameEN\\
+            \thesisSchoolNameEN}\\
+        \vspace{10mm}
+        {\Large \thesisAbstractTitleEN}\\
+        \vspace{10mm}
+    \end{center}
+}{
+    % 需先分段 vspace 才能生效
+    \par\vspace{10mm}
+
+    % 印出英文關鍵字
+    % \noindent 取消因 \par 產生的縮排
+    % 加 % 消除 foreach 後空格
+    \noindent{\thesisKeywordTagEN
+        \foreach \keyword [count=\i] in \thesisKeywordsEN {%
+            \ifnum\i=1%
+                \keyword%
+            \else%
+                \thesisKeywordSymbolEN~\keyword%
+            \fi%
+        }
+    }
+    \pagebreak % 需改
+}
+
+% 致謝指令
+\newcommand{\thesisAcknowledgement}{
+    \chapter*{\thesisAcknowledgementTitle}
+
+    \phantomsection % 目錄超連結錨點
+    \addcontentsline{toc}{chapter}{\thesisAcknowledgementTitle} % 加入目錄
+}
+
+% 符號說明表環境
+\newenvironment{thesisDenotationEnv}[1][2.5cm]{
+    \chapter*{\thesisDenotation}
+
+    \phantomsection % 目錄超連結錨點
+    \addcontentsline{toc}{chapter}{\thesisDenotation} % 加入目錄
+
+    \begin{list}{}{
+            \renewcommand\makelabel[1]{##1\hfill}
+            \setlength{\labelwidth}{#1}                     % 符號欄寬度
+            \setlength{\labelsep}{0.5cm}                    % 標籤與列表文字距離
+            \setlength{\itemindent}{0cm}                    % 標籤縮進
+            \setlength{\leftmargin}{\labelwidth+\labelsep}  % 標籤左邊界
+            \setlength{\rightmargin}{0cm}                   % 標籤右邊界
+            \setlength{\parsep}{0cm}                        % 段落間距
+            \setlength{\itemsep}{18pt}                      % 標籤間距
+            \setlength{\listparindent}{0cm}                 % 段落縮排
+            \setlength{\topsep}{0pt}                        % 標籤與上文距離
+        }
+        }{
+    \end{list}
+    \pagebreak % 需改
+}
+
+% --------------------------------------------------
+% 目錄設定
+% --------------------------------------------------
+% 載入套件 titletoc 設定目錄格式
+% \titlecontents{標題名稱}[左間距]
+% {標題格式}
+% {標題內容}
+% {無序號標題}
+% {指引線與頁碼}
+% [下間距]
+% --------------------------------------------------
+
+% 設定目錄樣式
+
+\setcounter{tocdepth}{2} % 設定目錄深度至 2 => 子節
+\setcounter{secnumdepth}{2} % 設定編號深度 2 => 子節
+
+\renewcommand{\contentsname}{\centerline{\thesisTableOfContents}} % 設定目錄標題
+
+\titlecontents{chapter}[0em]
+{}
+{\thesisChapterTitleToc} % 須改中英間距於 config
+{}
+{\titlerule*[0.5pc]{.}\contentspage}
+{}
+
+% 設定節目錄樣式 (保留)
+
+% 設定子節目錄樣式 (保留)
+
+% 設定表目錄樣式
+\renewcommand{\listtablename}{\centerline{\thesisListOfTables}} % 設定表目錄頁標題
+
+\renewcommand{\tablename}{\thesisTableName} % 設定表目錄頁標號，如 表 1, 表 2 .... 
+
+\titlecontents{table}[0em]
+{\tablename~\thecontentslabel~}
+{}
+{}
+{\titlerule*[0.5pc]{.}\contentspage}
+{}
+
+% 設定圖目錄樣式
+\renewcommand{\listfigurename}{\centerline{\thesisListOfFigures}} % 設定圖目錄頁標題
+\renewcommand{\figurename}{\thesisFigureName} % 設定圖目錄頁標號，如 圖 1, 圖 2 ....
+
+\titlecontents{figure}[0em]
+{\figurename~\thecontentslabel~}
+{}
+{}
+{\titlerule*[0.5pc]{.}\contentspage}
+{}
+
+% 製作目錄指令
+\newcommand{\thesisMakeTableOfContents}{
+    \clearpage % 需改
+
+    % 加入目錄與目錄超連結
+    \phantomsection
+    \addcontentsline{toc}{chapter}{\thesisTableOfContents}
+
+    \tableofcontents
+    \newpage
+}
+
+% 製作表目錄指令
+\newcommand{\thesisMakeListOfTables}{
+    \clearpage % 需改
+
+    % 加入目錄與目錄超連結
+    \phantomsection
+    \addcontentsline{toc}{chapter}{\thesisListOfTables}
+
+    \listoftables
+    \newpage % 需改
+}
+
+% 製作圖目錄指令
+\newcommand{\thesisMakeListOfFigures}{
+    \clearpage % 需改
+
+    % 加入目錄與目錄超連結
+    \phantomsection
+    \addcontentsline{toc}{chapter}{\thesisListOfFigures}
+
+    \listoffigures
+
+    \newpage % 需改
+}
+
+% --------------------------------------------------
+% 標題設定
+% --------------------------------------------------
+% 載入套件 titlesec 設定各層標題樣式
+% \titleformat{command}[shape]{format}{label}{sep}{before}[after]
+% - command: 代表欲重新定義之標題階層，包含 \part, \chapter, \section, \paragraph
+% - shape: 設定段落形狀，可選參數有 hang, block, display
+% - format: 定義標題外觀，如：位置、字體大小粗細…
+% - label: 定義標籤前綴標號
+% - sep: 定義標號與標題內容間隔距離
+% - before: 標題內容前增加文字
+% - after: 標題內容後增加文字
+%
+% 僅設定標題樣式
+% \titleformat*{command}{format}
+%
+% 強制設定標題與內容間距( \titlespacing 非嚴格)
+% \titlespacing*{command}{left}{before-sep}{after-sep}[right]
+% - command: 標題指令
+% - left: 標題左邊的缩排
+% - before-sep: 標題上方的空白間距
+% - after-sep: 標題下方的空白間距
+% - right（可選）: 標題右邊的缩排（一般很少用）。
+% --------------------------------------------------
+
+% 設定章標題樣式
+\titleformat{\chapter}
+{\centering\LARGE}
+{\thesisChapterTitle}
+{1em} % 或許需改中英間隔大小
+{}
+
+\titlespacing*{\chapter}{0pt}{0pt}{12pt} % 設定章標題下方留空一行
+
+% 設定節標題樣式
+\titleformat*{\section}{\Large}
+\titlespacing*{\section}{0pt}{12pt}{12pt} % 設定節標題上下留空
+
+% 設定子節標題樣式
+\titleformat*{\subsection}{\large}
+\titlespacing*{\subsection}{0pt}{12pt}{12pt} % 設定子節標題上下留空
+
+% 表標題設定
+\counterwithout{table}{chapter} % 不按章節排序
+
+\captionsetup[table]{ % caption
+    justification=centering, % 標題置中
+    position=top, % 標題在表上方
+    font=normalsize, % 字體大小為 10pt
+    labelsep=space, % 標號後使用空白間隔
+    skip=10pt, % 標題與表的間距 10pt
+}
+
+% 圖標題設定
+\counterwithout{figure}{chapter} % 不按章節排序
+
+\captionsetup[figure]{ % caption
+    justification=centering, % 標題置中
+    position=bottom, % 放在圖下方
+    font=normalsize, % 字體大小為 10pt
+    labelsep=space, % 標號後使用空白間隔
+    skip=10pt, % 標題與圖的間距 10pt
+}
+
+% 子圖標題設定(保留)
+
+% 公式標號設定
+\counterwithout{equation}{chapter} % 不按章節排序
+
+% --------------------------------------------------
+% 頁碼設定
+% --------------------------------------------------
+
+\newcommand{\thesisFrontStart}{
+    \pagenumbering{roman} % 設定羅馬字頁碼
+    \setcounter{page}{1}  % 中文摘要為前頁第一頁
+}
+
+\newcommand{\thesisContentStart}{
+    \pagenumbering{arabic} % 重設為數字頁碼
+    \setcounter{page}{1}   % 重設頁碼計數
+}
+
+% --------------------------------------------------
+% 內文設定
+% --------------------------------------------------
+
+% 設定中文行距為 1，英文行距為 1.5
+\ifthenelse{\equal{\thesisUseZHTW}{Y}}{
+    \linespread{1}
+}{
+    \linespread{1.5}
+}
+
+% 設定段落首行縮排
+\setlength{\parindent}{2em}
+
+% 設定段落間距
+\setlength{\parskip}{6pt}
+
+% 設定根據中文規則斷詞
+\XeTeXlinebreaklocale "zh"
+\XeTeXlinebreakskip = 0pt plus 1pt
+
+% 設定懲罰係數
+\doublehyphendemerits=10000 % 不允許連續兩行使用連字號
+\brokenpenalty=10000 % 單字不跨欄/跨頁斷開
+\widowpenalty=9999 % 幾乎不允許頁面底部僅有一行段落
+\clubpenalty=9999 % 幾乎不允許頁面頂部僅有一行段落
+\interfootnotelinepenalty=9999 % 幾乎不允許註腳在行內斷開
+
+% --------------------------------------------------
+% 圖表設定
+% --------------------------------------------------
+
+% graphicx 根目錄設定
+\graphicspath{{\thesisFiguresPath}}
+
+% pgfplots 初始設定
+\usepgfplotslibrary{colorbrewer}
+\pgfplotsset{compat=newest,compat/show suggested version=false}
+
+% 製作浮水印指令
+\newcommand{\thesisMakeWatermark}{
+    \AddToShipoutPictureBG{
+        \parbox[b][\paperheight]{\paperwidth}{
+            \vfill
+            \centering
+            \begin{tikzpicture}[remember picture, overlay]
+                \coordinate (watermarkPoint) at (current page.center);
+                \node [scale=1] at (watermarkPoint) {\includegraphics[width=3.65cm, height=3.65cm]{ \thesisWatermarkImage}};
+                \fill [fill=white, opacity=0.5]
+                ([xshift=-1.825cm, yshift=-1.825cm] watermarkPoint)
+                rectangle
+                ([xshift=1.825cm, yshift=1.825cm] watermarkPoint);
+            \end{tikzpicture}
+            \vfill
+        }
+    }
+}
+
+% --------------------------------------------------
+% 數學、演算法設定
+% --------------------------------------------------
+
+% 演算法區塊
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+
+\lstdefinestyle{codestyle}{
+    backgroundcolor=\color{backcolour},
+    commentstyle=\color{codegreen},
+    keywordstyle=\color{magenta},
+    numberstyle=\tiny\color{codegray},
+    stringstyle=\color{codepurple},
+    basicstyle=\textrm\footnotesize\ttfamily,
+    breakatwhitespace=false,
+    breaklines=true,
+    captionpos=b,
+    keepspaces=true,
+    numbers=left,
+    numbersep=5pt,
+    showspaces=false,
+    showstringspaces=false,
+    showtabs=false,
+    tabsize=2
+}
+
+\lstset{style=codestyle}
+
+% --------------------------------------------------
+% PDF、超連結設定
+% --------------------------------------------------
+
+% 超連結
+\hypersetup{
+    colorlinks=true,
+    linkcolor=black,
+    filecolor=gray,
+    anchorcolor=blue,
+    citecolor=blue
+}
+
+% --------------------------------------------------
+% 參考文獻設定
+% --------------------------------------------------
+
+% 更換參考文獻標題
+\renewcommand{\bibname}{\thesisBibliographyTitle}
+
+% biblatex 加入參考文獻檔案位置
+\addbibresource{\thesisRefBIB}
+
+% biblatex 修改英文參考文獻顯示符號
+
+% \DefineBibliographyStrings{english}{
+%     andothers = {et al.},
+%     editor = {ed.},
+%     editors = {eds.}
+% }
+
+% biblatex 修改中文參考文獻顯示符號
+
+% \DefineBibliographyStrings{chinese}{
+%     andothers = {等},
+%     editor = {編},
+%     editors = {編}
+% }
+
+% 製作參考文獻指令
+\newcommand{\thesisMakeReference}{
+    \clearpage
+
+    \chapter*{\thesisBibliographyTitle}
+
+    \phantomsection % 目錄超連結錨點
+    \addcontentsline{toc}{chapter}{\thesisBibliographyTitle} % 加入目錄
+
+    % 插入參考文獻
+    \ifthenelse{\equal{\thesisSplitBIBByLang}{Y}}{
+        \section*{中文部分}
+        \printbibliography[keyword={chinese}, heading=none]
+
+        \section*{外文部分}
+        \printbibliography[notkeyword={chinese}, heading=none]
+    }{
+        \printbibliography[heading = none]
+    }
+}
+
+% --------------------------------------------------
+% 附錄設定
+% --------------------------------------------------
+
+% 附錄指令
+\newcommand{\thesisAppendix}[2]{
+    \ifthenelse{\equal{\thesisUseZHTW}{Y}}{
+        \def\thesisCurrAppendixTitle{
+            \thesisAppendixTitle{#1}、#2
+        }
+    }{
+        \def\thesisCurrAppendixTitle{
+            \thesisAppendixTitle{#1}~#2
+        }
+    }
+
+    \chapter*{\thesisCurrAppendixTitle}
+
+    \phantomsection % 目錄超連結錨點
+    \addcontentsline{toc}{chapter}{ \thesisCurrAppendixTitle } % 加入目錄
+}

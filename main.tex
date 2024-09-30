@@ -1,0 +1,124 @@
+% !TEX TS-program = xelatex
+% !BIB program = bibtex
+% !TEX encoding = UTF-8 Unicode
+
+%----------------------------------------------------------------------------------------
+% NKUST Thesis LaTeX Simple Template 
+% 國立高雄科技大學論文 LaTeX 精簡模板
+% Original Authors 1: AIoRLab/NCLab/WNDCLab Thesis LaTeX Team
+% Original Authors 2: Hsins et al.
+% Original Repository 1: https://github.com/yuhao-kuo/NKUST-thesis-template
+% Original Repository 2: https://github.com/Hsins/NTU-Thesis
+% Author : TheFreeMan360
+% Version : 1.0 (2024.08.31)
+%----------------------------------------------------------------------------------------
+
+%----------------------------------------------------------------------------------------
+% 本專案設定，順序不可更動!!
+%----------------------------------------------------------------------------------------
+
+\documentclass[
+    % twoside,   % 按雙面印刷排版
+    % openright, % 新章節一律從奇數頁開始
+    a4paper,     % 版面大小
+    12pt         % 正常字體大小
+]{report}
+
+% 論文所有套件
+\input{setup/pakeges.tex}
+
+% 論文基礎資訊設定，需改成自己的資訊
+\input{setup/config.tex}
+
+% 論文所有設定
+\input{setup/settings.tex}
+
+%----------------------------------------------------------------------------------------
+% 使用其他套件在此引入與設定
+%----------------------------------------------------------------------------------------
+
+
+%----------------------------------------------------------------------------------------
+% 論文文件主體
+% 按國立高雄科技大學教務處學位論文撰寫體例排序
+%----------------------------------------------------------------------------------------
+
+\begin{document}
+
+% 封面
+\thesisMakeCoverPage
+
+% 製作浮水印
+\ifthenelse{\equal{\thesisUseWatermark}{Y}}{
+    \thesisMakeWatermark
+}{}
+
+% 書名頁
+\thesisMakeTitlePage
+
+% 暫時刪除浮水印避免檔到 PDF
+\ifthenelse{\equal{\thesisUseWatermark}{Y}}{
+    \ClearShipoutPicture
+}{}
+
+% 博碩士論文著作權授權書
+\ifthenelse{\not\equal{\thesisDegreeType}{BA}}{
+    \includepdf[width=1.0\textwidth]{\thesisPowerOfAttorneyPDF}
+}{}
+
+% 審定書
+\ifthenelse{\not\equal{\thesisDegreeType}{BA}}{
+    \includepdf[width=1.0\textwidth]{\thesisOralExamApprovalPDF}
+}{}
+
+% 博士論文推薦書(僅博士需要，推薦書檔案需存在)
+\ifthenelse{\equal{\thesisDegreeType}{PHD}}{
+    \includepdf[width=1.0\textwidth]{\thesisAdvisorRecommendationPDF}
+}{}
+
+% 加回浮水印
+\ifthenelse{\equal{\thesisUseWatermark}{Y}}{
+    \thesisMakeWatermark
+}{}
+
+% 中文摘要
+\thesisFrontStart
+\input{front/abstract_zhtw.tex}
+
+% 英文摘要
+\input{front/abstract_en.tex}
+
+% 致謝
+\input{front/aknowlegement.tex}
+
+% 目錄
+\thesisMakeTableOfContents
+
+% 表目錄
+\thesisMakeListOfTables
+
+% 圖目錄
+\thesisMakeListOfFigures
+
+% 符號說明
+\ifthenelse{\equal{\thesisHasDenotation}{Y}}{
+    \input{front/denotation.tex}
+}{}
+
+% 正文內容
+\thesisContentStart
+\input{chapters/chapter01.tex}
+\input{chapters/chapter02.tex}
+\input{chapters/chapter03.tex}
+\input{chapters/chapter04.tex}
+\input{chapters/chapter05.tex}
+
+% 參考文獻
+\thesisMakeReference
+
+% 附錄
+\input{back/appendix01.tex}
+\input{back/appendix02.tex}
+
+\clearpage
+\end{document}

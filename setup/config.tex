@@ -1,0 +1,177 @@
+% !TeX root = ../main.tex
+
+% --------------------------------------------------
+% 論文內容選項
+% --------------------------------------------------
+
+% 學位論文類別 BA: 學士 MA: 碩士 PHD: 博士
+\newcommand{\thesisDegreeType}{MA}
+
+% 是否有共同指導教授 Y: 有 N: 無
+\newcommand{\thesisHasCoAdvisor}{Y}
+% \newcommand{\thesisHasCoAdvisor}{N}
+
+% 是否使用浮水印 Y: 是 N: 否
+\newcommand{\thesisUseWatermark}{Y}
+
+% 是否使用中文撰寫
+\newcommand{\thesisUseZHTW}{Y}
+% \newcommand{\thesisUseZHTW}{N}
+
+% 中文字體 預設標楷體 BiauKai
+% 其他選項見 fonts/zhtw 欲修改使用字體全稱 
+\newcommand{\thesisFontsZHTW}{BiauKai}
+% \newcommand{\thesisFontsZHTW}{edukai-4.0}
+% \newcommand{\thesisFontsZHTW}{edusong-big5}
+
+% 是否有符號說明表 Y: 是 N: 否
+\newcommand{\thesisHasDenotation}{Y}
+
+% 是否顯示邊界線 Y: 顯示 N: 不顯示
+\newcommand{\thesisShowBoardLine}{Y}
+% \newcommand{\thesisShowBoardLine}{N}
+
+% 是否區分中英文獻 Y: 是 N: 否
+% 若要使用，references.bib 中文文獻需要確實設定 keyword={chinese} 
+\newcommand{\thesisSplitBIBByLang}{Y}
+% \newcommand{\thesisSplitBIBByLang}{N}
+
+% --------------------------------------------------
+% 論文基本資訊
+% --------------------------------------------------
+
+% 研究生資訊
+\newcommand{\thesisAuthorNameZHTW}{阿烏拉}
+\newcommand{\thesisAuthorNameEN}{A WU LA}
+
+% 指導教授
+\newcommand{\thesisAdvisorNameZHTW}{芙利蓮}
+\newcommand{\thesisAdvisorNameEN}{Frieren}
+
+% 共同指導教授(有共指需要修改)
+\newcommand{\thesisCoAdvisorNameZHTW}{費倫}
+\newcommand{\thesisCoAdvisorNameEN}{Fern}
+
+% 學校資訊
+\newcommand{\thesisSchoolNameZHTW}{國立高雄科技大學}
+\newcommand{\thesisSchoolNameEN}{National Kaohsiung University of Science and Technology}
+\newcommand{\thesisSchoolLocationEN}{Kaohsiung, Taiwan, Republic of China}
+
+% 學院
+\newcommand{\thesisCollegeNameZHTW}{工學院}
+\newcommand{\thesisCollegeNameEN}{College of Engineering}
+
+% 系名(=主修)
+\newcommand{\thesisDeptNameZHTW}{電子工程}
+\newcommand{\thesisDeptNameEN}{Electronic Engineering}
+
+% 班名
+\newcommand{\thesisClassNameZHTW}{\thesisDeptNameZHTW 系碩士班}
+\newcommand{\thesisClassNameEN}{Graduate Institute of \thesisDeptNameEN}
+
+% 學士學位與授予學位
+\newcommand{\thesisDegreeBachelorZHTW}{學士}
+\newcommand{\thesisDegreeBachelorEN}{Bachelor}
+\newcommand{\thesisConferredDegreeBachelor}{\thesisDegreeBachelorEN~of Science}
+
+% 碩士學位與授予學位
+\newcommand{\thesisDegreeMasterZHTW}{碩士}
+\newcommand{\thesisDegreeMasterEN}{Master}
+\newcommand{\thesisConferredDegreeMaster}{\thesisDegreeMasterEN~of Science}
+
+% 博士學位與授予學位
+\newcommand{\thesisDegreeDoctorZHTW}{博士}
+\newcommand{\thesisDegreeDoctorEN}{Doctor}
+\newcommand{\thesisConferredDegreeDoctor}{\thesisDegreeDoctorEN~of Science}
+
+% 論文題目
+\newcommand{\thesisTitleZHTW}{高雄科技大學 \LaTeX 論文樣板}
+\newcommand{\thesisTitleEN}{NKUST \LaTeX~Thesis Template}
+
+% 論文關鍵字
+\newcommand{\thesisKeywordsZHTW}{{LaTeX},{高科},{論文},{模板}}
+\newcommand{\thesisKeywordsEN}{{LaTeX},{NKUST},{Thesis},{Template}}
+
+% 日期(月份)
+\newcommand{\thesisDateZHTW}{中華民國 一一三 年 六 月}
+\newcommand{\thesisDateEN}{June 2024} % 英文月份不得縮寫
+
+% --------------------------------------------------
+% 路徑變數
+% --------------------------------------------------
+
+% 審定書、授權書、推薦書
+\newcommand{\thesisOralExamApprovalPDF}{./front/oral_exam_approval.pdf}
+\newcommand{\thesisPowerOfAttorneyPDF}{./front/power_of_attorney.pdf}
+\newcommand{\thesisAdvisorRecommendationPDF}{}
+
+% 參考文獻
+\newcommand{\thesisRefBIB}{./back/references.bib}
+
+% 字體檔案
+\newcommand{\thesisFontsPathZHTW}{./fonts/zhtw/}
+\newcommand{\thesisFontsPathEN}{./fonts/en/}
+
+% 圖片根目錄
+\newcommand{\thesisFiguresPath}{./figures}
+
+% 校徽與浮水印
+\newcommand{\thesisSealImage}{./figures/seal/seal_golden.png}
+\newcommand{\thesisWatermarkImage}{./figures/seal/seal_golden.png}
+
+% --------------------------------------------------
+% 語言變數
+% --------------------------------------------------
+
+% 中文摘要
+\newcommand{\thesisAbstractTitleZHTW}{摘要}
+\newcommand{\thesisKeywordTagZHTW}{關鍵字：}
+\newcommand{\thesisKeywordSymbolZHTW}{、}
+
+% 英文摘要
+\newcommand{\thesisAbstractTitleEN}{Abstract}
+\newcommand{\thesisKeywordTagEN}{Keywords:~}
+\newcommand{\thesisKeywordSymbolEN}{,~}
+
+% 繁體中文章節、章節標題與目錄
+\newcommand{\thesisOralExamApprovalZHTW}{口試委員審定書}
+\newcommand{\thesisTableOfContentsZHTW}{目錄}
+\newcommand{\thesisListOfFiguresZHTW}{圖目錄}
+\newcommand{\thesisListOfTablesZHTW}{表目錄}
+\newcommand{\thesisDenotationZHTW}{符號說明}
+\newcommand{\thesisAcknowledgementTitleZHTW}{致謝}
+
+\newcommand{\thesisChapterTitleZHTW}{\CJKnumber{\thechapter}、}
+\newcommand{\thesisChapterTitleTocZHTW}{\CJKnumber{\thecontentslabel}、~}
+
+\newcommand{\thesisBibliographyTitleZHTW}{參考文獻}
+\newcommand{\thesisAppendixTitleZHTW}{附錄}
+
+\newcommand{\thesisFigureNameZHTW}{圖}
+\newcommand{\thesisTableNameZHTW}{表}
+
+% 英文章節、章節標題與目錄
+\newcommand{\thesisOralExamApprovalEN}{The Oral Examination Committee Approval}
+\newcommand{\thesisTableOfContentsEN}{Contents}
+\newcommand{\thesisListOfFiguresEN}{List of Figures}
+\newcommand{\thesisListOfTablesEN}{List of Tables}
+\newcommand{\thesisDenotationEN}{Denotation}
+\newcommand{\thesisAcknowledgementTitleEN}{Acknowledgements}
+
+\newcommand{\thesisChapterTitleEN}{Chapter~\thechapter}
+\newcommand{\thesisChapterTitleTocEN}{Chapter~\thecontentslabel~}
+
+\newcommand{\thesisBibliographyTitleEN}{References}
+\newcommand{\thesisAppendixTitleEN}{Appendix}
+
+\newcommand{\thesisFigureNameEN}{Figure}
+\newcommand{\thesisTableNameEN}{Table}
+
+% --------------------------------------------------
+% 排版變數
+% --------------------------------------------------
+
+%　繁體中文目錄排版單位設定(保留)
+
+
+%　英文目錄排版單位設定(保留)

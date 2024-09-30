@@ -1,0 +1,90 @@
+% !TeX root = ../main.tex
+
+% 工具套件
+\usepackage{ifthen} % 支援 if 條件判斷
+\usepackage{pgffor} % 支援 foreach
+
+% 語言與字體套件
+\usepackage[utf8]{inputenc} % 控制輸入編碼
+\usepackage[LGR,OT1]{fontenc} % 控制字體編碼
+% \usepackage{polyglossia} % 支援多語系
+
+\usepackage{xcolor} % 支援字體顏色變化
+
+\usepackage{xeCJK} % 支援中文字體
+\usepackage{xeCJKfntef} % 支援中日韓文字下劃線、雙下劃線與波浪紋效果
+\usepackage{CJKnumb} % 支援中文數字
+% \usepackage{zhnumber} % 支援更多中文數字
+
+\usepackage{fontspec} % 支援英文字體設定
+\usepackage{ulem} % 支援英文下劃線、雙下劃線與波浪紋效果
+
+% 版面套件
+\usepackage{geometry} % 設定版面大小
+\usepackage[autostyle=true]{csquotes} % 設定引言排版
+
+% 目錄格式套件
+\usepackage{titletoc} % 設定目錄樣式
+% \usepackage{tocloft} % 設定目錄樣式
+
+% 標題格式套件
+\usepackage{titlesec} % 設定標題樣式
+\usepackage{caption} % 支援插入圖表標題
+\usepackage{subcaption} % 支援插入子圖與子圖標題
+\usepackage{chngcntr} % 支援圖表標題按順序編排
+
+% 內文套件
+\usepackage{indentfirst} % 設定首行縮排
+\usepackage{setspace} % 設定行距（標題內文分別設定）
+\usepackage{enumerate} % 支援列表環境
+% \usepackage{enumitem} % 支援列表環境 (會跟 enumerate 衝突)
+% \usepackage{paralist} % 支援列表環境
+% \usepackage{footmisc} % 支援自訂註腳樣式
+
+% 插圖
+\usepackage{graphicx} % 支援插入圖片
+\usepackage{eso-pic} % 支援插入圖片於文字下方
+
+% 繪圖
+\usepackage{tikz} % 支援曲線繪圖
+\usepackage{amscd} % 支援繪製流程圖
+\usepackage{pict2e} % 支援繪圖
+\usepackage{picture} % 支援繪圖
+\usepackage{pgfplots} % 支援資料繪圖
+\usepackage[subpreambles]{standalone} % 支援繪圖重複利用
+
+% 表格
+\usepackage{array} % 調整表格高度
+\usepackage{booktabs} % 改善表格設定
+\usepackage{diagbox} % 支援插入表格反斜線
+\usepackage{makecell} % 支援單元格格式調整
+\usepackage{multirow} % 支援合併儲存格
+\usepackage{longtable} % 支援跨頁表格
+\usepackage{tabularx} % 支援插入表格
+\usepackage{threeparttable} % 增強表格排版
+
+% 數學
+\usepackage{amsmath} % 增強數學公式排版
+\usepackage{amsthm}  % 增強定理、命題、證明等數學陳述
+\usepackage{amssymb} % 支援更多數學符號
+\usepackage{fp}  % 支援浮點數計算功能
+\usepackage{calc} % 支援算數計算功能
+\usepackage{siunitx} % 支援公制單位顯示
+
+% 演算法
+\usepackage{algorithm} % 支援程式碼
+\usepackage{algorithmicx} % 支援 algpseudocode，提供語法
+\usepackage{algpseudocode} % 支援虛擬碼語法
+\usepackage{listings} % 定義演算法呈現樣式
+
+% PDF、超連結套件
+\usepackage{hyperref} % 支援插入超連結
+\usepackage{pdfpages} % 支援插入 PDF
+
+% 參考文獻套件
+\usepackage[
+    backend=biber,
+    natbib=true, % 加入 natbib 格式支援
+    style=apa,
+    sorting=nyt, % 按作者名, 年份, 題目排序文獻
+]{biblatex}
