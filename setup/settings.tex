@@ -298,6 +298,7 @@
         \end{minipage}% 要加這個不然不會並排
         \begin{minipage}[t]{0.5\textwidth}
             \begin{flushright}
+                \def\arraystretch{1} % 設定列高為 1 倍讓兩邊對齊
                 \begin{tabular}[t]{l@{}l}
                     {\Large 指導教授：} & {\Large \thesisAdvisorNameZHTW~博士}
                     \ifthenelse{\equal{\thesisHasCoAdvisor}{Y}}{
@@ -321,6 +322,8 @@
 
         \vspace{10mm}
     \end{center}
+
+    \par
 }{
     % 需先分段 vspace 才能生效
     \par\vspace{10mm}
@@ -351,18 +354,19 @@
 
     % 指導教授與研究生
     \begin{center}
-        \begin{minipage}[t]{0.5\textwidth}
+        \begin{minipage}[t]{0.4\textwidth}
             \begin{flushleft}
-                {\Large Student:~\thesisAuthorNameEN}
+                {\large Student:~\thesisAuthorNameEN}
             \end{flushleft}
         \end{minipage}% 要加這個不然不會並排
-        \begin{minipage}[t]{0.5\textwidth}
+        \begin{minipage}[t]{0.6\textwidth}
             \begin{flushright}
+                \def\arraystretch{1} % 設定列高為 1 倍讓兩邊對齊
                 \begin{tabular}[t]{l@{}l}
-                    {\Large Advisor:} & {\Large ~Dr.~\thesisAdvisorNameEN}
+                    {\large Advisor:} & {\large ~Dr.~\thesisAdvisorNameEN}
                     \ifthenelse{\equal{\thesisHasCoAdvisor}{Y}}{
                     \\[5mm]
-                                      & {\Large ~Dr.~\thesisCoAdvisorNameEN} \\
+                                      & {\large ~Dr.~\thesisCoAdvisorNameEN} \\
                     }{}
                 \end{tabular}
             \end{flushright}
@@ -379,6 +383,8 @@
         {\Large \thesisAbstractTitleEN}\\
         \vspace{10mm}
     \end{center}
+
+    \par
 }{
     % 需先分段 vspace 才能生效
     \par\vspace{10mm}
@@ -743,12 +749,20 @@
     % 插入參考文獻
     \ifthenelse{\equal{\thesisSplitBIBByLang}{Y}}{
         \section*{中文部分}
-        \printbibliography[keyword={chinese}, heading=none]
+        \printbibliography[
+            keyword={chinese},
+            heading=none,
+        ]
 
         \section*{外文部分}
-        \printbibliography[notkeyword={chinese}, heading=none]
+        \printbibliography[
+            notkeyword={chinese},
+            heading=none,
+        ]
     }{
-        \printbibliography[heading = none]
+        \printbibliography[
+            heading = none
+        ]
     }
 }
 
