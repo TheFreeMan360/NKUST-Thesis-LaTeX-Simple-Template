@@ -54,23 +54,27 @@
 % 書名頁
 \thesisMakeTitlePage
 
-% 博碩士論文著作權授權書
-\ifthenelse{\not\equal{\thesisDegreeType}{BA}}{
-    \includepdf[width=1.0\textwidth]{\thesisPowerOfAttorneyPDF}
-}{}
+% 若是初稿則不加入這些文件
+\ifthenelse{\equal{\thesisIsDraft}{Y}}{
 
-% 審定書
-\ifthenelse{\not\equal{\thesisDegreeType}{BA}}{
-    \includepdf[width=1.0\textwidth]{\thesisOralExamApprovalPDF}
-}{}
+    % 博碩士論文著作權授權書
+    \ifthenelse{\not\equal{\thesisDegreeType}{BA}}{
+        \includepdf[width=1.0\textwidth]{\thesisPowerOfAttorneyPDF}
+    }{}
 
-% 博士論文推薦書(僅博士需要，推薦書檔案需存在)
-\ifthenelse{\equal{\thesisDegreeType}{PHD}}{
-    \includepdf[width=1.0\textwidth]{\thesisAdvisorRecommendationPDF}
+    % 審定書
+    \ifthenelse{\not\equal{\thesisDegreeType}{BA}}{
+        \includepdf[width=1.0\textwidth]{\thesisOralExamApprovalPDF}
+    }{}
+
+    % 博士論文推薦書(僅博士需要，推薦書檔案需存在)
+    \ifthenelse{\equal{\thesisDegreeType}{PHD}}{
+        \includepdf[width=1.0\textwidth]{\thesisAdvisorRecommendationPDF}
+    }{}
 }{}
 
 % 中文摘要
-\thesisFrontStart
+\thesisFrontMatter
 \input{front/abstract_zhtw.tex}
 
 % 英文摘要
@@ -94,7 +98,7 @@
 }{}
 
 % 正文內容
-\thesisContentStart
+\thesisMainMatter
 \input{chapters/chapter01.tex}
 \input{chapters/chapter02.tex}
 \input{chapters/chapter03.tex}
