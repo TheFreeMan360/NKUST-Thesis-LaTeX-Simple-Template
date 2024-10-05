@@ -62,44 +62,62 @@
 
 % 撰寫語言選項
 \ifthenelse{\equal{\thesisUseZHTW}{Y}}{
-    % 繁體中文章節、標題、目錄等用詞
-    \newcommand{\thesisOralExamApproval}{\thesisOralExamApprovalZHTW}
-    \newcommand{\thesisTableOfContents}{\thesisTableOfContentsZHTW}
-    \newcommand{\thesisListOfFigures}{\thesisListOfFiguresZHTW}
-    \newcommand{\thesisListOfTables}{\thesisListOfTablesZHTW}
-    \newcommand{\thesisDenotation}{\thesisDenotationZHTW}
+    % 標題用詞
+    \newcommand{\thesisOralExamApprovalTitle}{\thesisOralExamApprovalTitleZHTW}
+    \newcommand{\thesisTableOfContentsTitle}{\thesisTableOfContentsTitleZHTW}
+    \newcommand{\thesisListOfFiguresTitle}{\thesisListOfFiguresTitleZHTW}
+    \newcommand{\thesisListOfTablesTitle}{\thesisListOfTablesTitleZHTW}
+    \newcommand{\thesisDenotationTitle}{\thesisDenotationTitleZHTW}
     \newcommand{\thesisAcknowledgementTitle}{\thesisAcknowledgementTitleZHTW}
-
-    \newcommand{\thesisChapterTitle}{\thesisChapterTitleZHTW}
-    \newcommand{\thesisChapterTitleToc}{\thesisChapterTitleTocZHTW}
-
     \newcommand{\thesisBibliographyTitle}{\thesisBibliographyTitleZHTW}
     \newcommand{\thesisAppendixTitle}{\thesisAppendixTitleZHTW}
 
+    % 章標題顯示格式
+    \newcommand{\thesisChapterTitleFormat}{\thesisChapterTitleFormatZHTW}
+
+    % 章標題目錄顯示格式
+    \newcommand{\thesisChapterTitleTocFormat}{\thesisChapterTitleTocFormatZHTW}
+
+    % 附錄章標題顯示格式
+    \newcommand{\thesisAppendixTitleFormat}{\thesisAppendixTitleFormatZHTW}
+
+    % 附錄章標題目錄顯示格式
+    \newcommand{\thesisAppendixTitleTocFormat}{\thesisAppendixTitleTocFormatZHTW}
+
+    % 圖表標題名
     \newcommand{\thesisFigureName}{\thesisFigureNameZHTW}
     \newcommand{\thesisTableName}{\thesisTableNameZHTW}
 
-    % 中文目錄排版單位(保留)
+    % 目錄排版單位(保留)
 
 }{
     % 英文章節、標題、目錄等用詞
-    \newcommand{\thesisOralExamApproval}{\thesisOralExamApprovalEN}
-    \newcommand{\thesisTableOfContents}{\thesisTableOfContentsEN}
-    \newcommand{\thesisListOfFigures}{\thesisListOfFiguresEN}
-    \newcommand{\thesisListOfTables}{\thesisListOfTablesEN}
-    \newcommand{\thesisDenotation}{\thesisDenotationEN}
+    \newcommand{\thesisOralExamApprovalTitle}{\thesisOralExamApprovalTitleEN}
+    \newcommand{\thesisTableOfContentsTitle}{\thesisTableOfContentsTitleEN}
+    \newcommand{\thesisListOfFiguresTitle}{\thesisListOfFiguresTitleEN}
+    \newcommand{\thesisListOfTablesTitle}{\thesisListOfTablesTitleEN}
+    \newcommand{\thesisDenotationTitle}{\thesisDenotationTitleEN}
     \newcommand{\thesisAcknowledgementTitle}{\thesisAcknowledgementTitleEN}
-
-    \newcommand{\thesisChapterTitle}{\thesisChapterTitleEN}
-    \newcommand{\thesisChapterTitleToc}{\thesisChapterTitleTocEN}
-
     \newcommand{\thesisBibliographyTitle}{\thesisBibliographyTitleEN}
     \newcommand{\thesisAppendixTitle}{\thesisAppendixTitleEN}
 
+    % 章標題顯示格式
+    \newcommand{\thesisChapterTitleFormat}{\thesisChapterTitleFormatEN}
+
+    % 章標題目錄顯示格式
+    \newcommand{\thesisChapterTitleTocFormat}{\thesisChapterTitleTocFormatEN}
+
+    % 附錄章標題顯示格式
+    \newcommand{\thesisAppendixTitleFormat}{\thesisAppendixTitleFormatEN}
+
+    % 附錄章標題目錄顯示格式
+    \newcommand{\thesisAppendixTitleTocFormat}{\thesisAppendixTitleTocFormatEN}
+
+    % 圖表標題名
     \newcommand{\thesisFigureName}{\thesisFigureNameEN}
     \newcommand{\thesisTableName}{\thesisTableNameEN}
 
-    % 英文目錄排版單位(保留)
+    % 目錄排版單位(保留)
 
 }
 
@@ -317,12 +335,12 @@
     % 印出中文關鍵字
     % \noindent 取消因 \par 產生的縮排
     % 加 % 消除 foreach 後空格
-    \noindent{\thesisKeywordTagZHTW
+    \noindent{\thesisKeywordsTagZHTW
         \foreach \keyword [count=\i] in \thesisKeywordsZHTW {%
             \ifnum\i=1% 
                 \keyword%
             \else%
-                \thesisKeywordSymbolZHTW\keyword%
+                \thesisKeywordsSymbolZHTW\keyword%
             \fi%
         }
     }
@@ -378,12 +396,12 @@
     % 印出英文關鍵字
     % \noindent 取消因 \par 產生的縮排
     % 加 % 消除 foreach 後空格
-    \noindent{\thesisKeywordTagEN
+    \noindent{\thesisKeywordsTagEN
         \foreach \keyword [count=\i] in \thesisKeywordsEN {%
             \ifnum\i=1%
                 \keyword%
             \else%
-                \thesisKeywordSymbolEN~\keyword%
+                \thesisKeywordsSymbolEN~\keyword%
             \fi%
         }
     }
@@ -400,10 +418,10 @@
 
 % 符號說明表環境
 \newenvironment{thesisDenotationEnv}[1][2.5cm]{
-    \chapter*{\thesisDenotation}
+    \chapter*{\thesisDenotationTitle}
 
     \phantomsection % 目錄超連結錨點
-    \addcontentsline{toc}{chapter}{\thesisDenotation} % 加入目錄
+    \addcontentsline{toc}{chapter}{\thesisDenotationTitle} % 加入目錄
 
     \begin{list}{}{
             \renewcommand\makelabel[1]{##1\hfill}
@@ -439,11 +457,11 @@
 \setcounter{tocdepth}{2} % 設定目錄深度至 2 => 子節
 \setcounter{secnumdepth}{2} % 設定編號深度 2 => 子節
 
-\renewcommand{\contentsname}{\centerline{\thesisTableOfContents}} % 設定目錄標題
+\renewcommand{\contentsname}{\centerline{\thesisTableOfContentsTitle}} % 設定目錄標題
 
 \titlecontents{chapter}[0em]
 {}
-{\thesisChapterTitleToc} % 須改中英間距於 config
+{\thesisChapterTitleTocFormat} % 須改中英間距於 config
 {}
 {\titlerule*[0.5pc]{.}\contentspage}
 {}
@@ -453,7 +471,7 @@
 % 設定子節目錄樣式 (保留)
 
 % 設定表目錄樣式
-\renewcommand{\listtablename}{\centerline{\thesisListOfTables}} % 設定表目錄頁標題
+\renewcommand{\listtablename}{\centerline{\thesisListOfTablesTitle}} % 設定表目錄頁標題
 
 \renewcommand{\tablename}{\thesisTableName} % 設定表目錄頁標號，如 表 1, 表 2 .... 
 
@@ -465,7 +483,7 @@
 {}
 
 % 設定圖目錄樣式
-\renewcommand{\listfigurename}{\centerline{\thesisListOfFigures}} % 設定圖目錄頁標題
+\renewcommand{\listfigurename}{\centerline{\thesisListOfFiguresTitle}} % 設定圖目錄頁標題
 \renewcommand{\figurename}{\thesisFigureName} % 設定圖目錄頁標號，如 圖 1, 圖 2 ....
 
 \titlecontents{figure}[0em]
@@ -481,7 +499,7 @@
 
     % 加入目錄與目錄超連結
     \phantomsection
-    \addcontentsline{toc}{chapter}{\thesisTableOfContents}
+    \addcontentsline{toc}{chapter}{\thesisTableOfContentsTitle}
 
     \tableofcontents
     \newpage
@@ -493,7 +511,7 @@
 
     % 加入目錄與目錄超連結
     \phantomsection
-    \addcontentsline{toc}{chapter}{\thesisListOfTables}
+    \addcontentsline{toc}{chapter}{\thesisListOfTablesTitle}
 
     \listoftables
     \newpage % 需改
@@ -505,7 +523,7 @@
 
     % 加入目錄與目錄超連結
     \phantomsection
-    \addcontentsline{toc}{chapter}{\thesisListOfFigures}
+    \addcontentsline{toc}{chapter}{\thesisListOfFiguresTitle}
 
     \listoffigures
 
@@ -540,7 +558,7 @@
 % 設定章標題樣式
 \titleformat{\chapter}
 {\centering\LARGE}
-{\thesisChapterTitle}
+{\thesisChapterTitleFormat}
 {1em} % 或許需改中英間隔大小
 {}
 
@@ -582,7 +600,7 @@
 \counterwithout{equation}{chapter} % 不按章節排序
 
 % --------------------------------------------------
-% 頁碼設定
+% 頁面內容設定
 % --------------------------------------------------
 
 \newcommand{\thesisFrontMatter}{
@@ -593,6 +611,35 @@
 \newcommand{\thesisMainMatter}{
     \pagenumbering{arabic} % 重設為數字頁碼
     \setcounter{page}{1}   % 重設頁碼計數
+}
+
+\newcommand{\thesisAppendixMatter}{
+    % 使用此指令明確宣告，這之後是目錄避免超連結混亂
+    \appendix
+
+    % 重設章節計數器
+    \setcounter{chapter}{0}
+
+    % 將附錄章編號設回數字
+    \renewcommand{\thechapter}{\arabic{chapter}}
+
+    % 將附錄節編號設回數字
+    \renewcommand{\thesection}{\arabic{chapter}.\arabic{section}}
+
+    % 重設章目錄樣式
+    \titlecontents{chapter}[0em]
+    {}
+    {\thesisAppendixTitleTocFormat} % 須改中英間距於 config
+    {}
+    {\titlerule*[0.5pc]{.}\contentspage}
+    {}
+
+    % 重設章標題樣式
+    \titleformat{\chapter}
+    {\centering\LARGE}
+    {\thesisAppendixTitleFormat}
+    {1em} % 或許需改中英間隔大小
+    {}
 }
 
 % --------------------------------------------------
@@ -751,21 +798,3 @@
 % --------------------------------------------------
 % 附錄設定
 % --------------------------------------------------
-
-% 附錄指令
-\newcommand{\thesisAppendix}[2]{
-    \ifthenelse{\equal{\thesisUseZHTW}{Y}}{
-        \def\thesisCurrAppendixTitle{
-            \thesisAppendixTitle{#1}、#2
-        }
-    }{
-        \def\thesisCurrAppendixTitle{
-            \thesisAppendixTitle{#1}~#2
-        }
-    }
-
-    \chapter*{\thesisCurrAppendixTitle}
-
-    \phantomsection % 目錄超連結錨點
-    \addcontentsline{toc}{chapter}{ \thesisCurrAppendixTitle } % 加入目錄
-}

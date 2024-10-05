@@ -22,7 +22,7 @@
 \newcommand{\thesisUseWatermark}{Y}
 % \newcommand{\thesisUseWatermark}{N}
 
-% 是否使用中文撰寫
+% 是否使用中文撰寫 Y: 是 N: 否
 \newcommand{\thesisUseZHTW}{Y}
 % \newcommand{\thesisUseZHTW}{N}
 
@@ -37,6 +37,7 @@
 % \newcommand{\thesisHasDenotation}{N}
 
 % 是否顯示邊界線 Y: 顯示 N: 不顯示
+% 顯示邊界線可以在撰寫時幫助判斷內容顯示範圍
 \newcommand{\thesisShowBoardLine}{Y}
 % \newcommand{\thesisShowBoardLine}{N}
 
@@ -102,9 +103,9 @@
 \newcommand{\thesisKeywordsEN}{{LaTeX},{NKUST},{Thesis},{Template}}
 
 % 論文日期月份
-\newcommand{\thesisYearAD}{2024} % 西元年
-\newcommand{\thesisYearROC}{113} % 西元年 - 1911
-\newcommand{\thesisMonth}{7} % 月份
+\newcommand{\thesisYearAD}{2024} % 西元年數字
+\newcommand{\thesisYearROC}{\the\numexpr\thesisYearAD-1911\relax} % 西元年 - 1911
+\newcommand{\thesisMonth}{7} % 月份數字
 
 \newcommand{\thesisDateROC}{中華民國\zhdigits{\thesisYearROC}年\zhdigits{\thesisMonth}月}
 \newcommand{\thesisDateEN}{\thesisGetMonthName{\thesisMonth} \thesisYearAD}
@@ -138,45 +139,63 @@
 
 % 中文摘要
 \newcommand{\thesisAbstractTitleZHTW}{摘要}
-\newcommand{\thesisKeywordTagZHTW}{關鍵字：}
-\newcommand{\thesisKeywordSymbolZHTW}{、}
+\newcommand{\thesisKeywordsTagZHTW}{關鍵字：}
+\newcommand{\thesisKeywordsSymbolZHTW}{、}
 
 % 英文摘要
 \newcommand{\thesisAbstractTitleEN}{ABSTRACT}
-\newcommand{\thesisKeywordTagEN}{Keywords:~}
-\newcommand{\thesisKeywordSymbolEN}{,~}
+\newcommand{\thesisKeywordsTagEN}{Keywords:~}
+\newcommand{\thesisKeywordsSymbolEN}{,~}
 
-% 繁體中文章節、章節標題與目錄
-\newcommand{\thesisOralExamApprovalZHTW}{口試委員審定書}
-\newcommand{\thesisTableOfContentsZHTW}{目錄}
-\newcommand{\thesisListOfFiguresZHTW}{圖目錄}
-\newcommand{\thesisListOfTablesZHTW}{表目錄}
-\newcommand{\thesisDenotationZHTW}{符號說明}
+% 繁體中文標題用詞
+\newcommand{\thesisOralExamApprovalTitleZHTW}{口試委員審定書}
 \newcommand{\thesisAcknowledgementTitleZHTW}{致謝}
-
-\newcommand{\thesisChapterTitleZHTW}{\zhnumber{\thechapter}、}
-\newcommand{\thesisChapterTitleTocZHTW}{\zhnumber{\thecontentslabel}、~}
-
+\newcommand{\thesisTableOfContentsTitleZHTW}{目錄}
+\newcommand{\thesisListOfFiguresTitleZHTW}{圖目錄}
+\newcommand{\thesisListOfTablesTitleZHTW}{表目錄}
+\newcommand{\thesisDenotationTitleZHTW}{符號說明}
 \newcommand{\thesisBibliographyTitleZHTW}{參考文獻}
 \newcommand{\thesisAppendixTitleZHTW}{附錄}
 
+% 繁體中文章標題顯示格式
+\newcommand{\thesisChapterTitleFormatZHTW}{\zhnumber{\thechapter}、}
+
+% 繁體中文章標題目錄顯示格式
+\newcommand{\thesisChapterTitleTocFormatZHTW}{\zhnumber{\thecontentslabel}、}
+
+% 繁體中文附錄章標題顯示格式
+\newcommand{\thesisAppendixTitleFormatZHTW}{\thesisAppendixTitleZHTW\zhnumber{\thechapter}、}
+
+% 繁體中文附錄章標題目錄顯示格式
+\newcommand{\thesisAppendixTitleTocFormatZHTW}{\thesisAppendixTitleZHTW\zhnumber{\thecontentslabel}、}
+
+% 繁體中文圖表標題名
 \newcommand{\thesisFigureNameZHTW}{圖}
 \newcommand{\thesisTableNameZHTW}{表}
 
-% 英文章節、章節標題與目錄
-\newcommand{\thesisOralExamApprovalEN}{The Oral Examination Committee Approval}
-\newcommand{\thesisTableOfContentsEN}{Contents}
-\newcommand{\thesisListOfFiguresEN}{List of Figures}
-\newcommand{\thesisListOfTablesEN}{List of Tables}
-\newcommand{\thesisDenotationEN}{Denotation}
+% 英文標題用詞
+\newcommand{\thesisOralExamApprovalTitleEN}{The Oral Examination Committee Approval}
+\newcommand{\thesisTableOfContentsTitleEN}{Contents}
+\newcommand{\thesisListOfFiguresTitleEN}{List of Figures}
+\newcommand{\thesisListOfTablesTitleEN}{List of Tables}
+\newcommand{\thesisDenotationTitleEN}{Denotation}
 \newcommand{\thesisAcknowledgementTitleEN}{Acknowledgements}
-
-\newcommand{\thesisChapterTitleEN}{Chapter~\thechapter}
-\newcommand{\thesisChapterTitleTocEN}{Chapter~\thecontentslabel~}
-
 \newcommand{\thesisBibliographyTitleEN}{References}
 \newcommand{\thesisAppendixTitleEN}{Appendix}
 
+% 英文標題顯示格式
+\newcommand{\thesisChapterTitleFormatEN}{Chapter~\thechapter~}
+
+% 英文目錄標題顯示格式
+\newcommand{\thesisChapterTitleTocFormatEN}{Chapter~\thecontentslabel~}
+
+% 英文附錄章標題顯示格式
+\newcommand{\thesisAppendixTitleFormatEN}{\thesisAppendixTitleEN~\thechapter~}
+
+% 英文附錄章標題目錄顯示格式
+\newcommand{\thesisAppendixTitleTocFormatEN}{\thesisAppendixTitleEN~\thecontentslabel~}
+
+% 英文中文圖表標題名
 \newcommand{\thesisFigureNameEN}{Figure}
 \newcommand{\thesisTableNameEN}{Table}
 
