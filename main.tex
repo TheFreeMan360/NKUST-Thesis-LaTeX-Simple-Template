@@ -48,18 +48,11 @@
 % 封面
 \thesisMakeCoverPage
 
-% 製作浮水印
-\ifthenelse{\equal{\thesisUseWatermark}{Y}}{
-    \thesisMakeWatermark
-}{}
+% 加入浮水印
+\thesisMakeWatermark
 
 % 書名頁
 \thesisMakeTitlePage
-
-% 暫時刪除浮水印避免檔到 PDF
-\ifthenelse{\equal{\thesisUseWatermark}{Y}}{
-    \ClearShipoutPicture
-}{}
 
 % 博碩士論文著作權授權書
 \ifthenelse{\not\equal{\thesisDegreeType}{BA}}{
@@ -74,11 +67,6 @@
 % 博士論文推薦書(僅博士需要，推薦書檔案需存在)
 \ifthenelse{\equal{\thesisDegreeType}{PHD}}{
     \includepdf[width=1.0\textwidth]{\thesisAdvisorRecommendationPDF}
-}{}
-
-% 加回浮水印
-\ifthenelse{\equal{\thesisUseWatermark}{Y}}{
-    \thesisMakeWatermark
 }{}
 
 % 中文摘要

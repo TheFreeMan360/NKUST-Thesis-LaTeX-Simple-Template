@@ -122,7 +122,6 @@
     \fi
 }
 
-
 % --------------------------------------------------
 % 版面設定
 % --------------------------------------------------
@@ -172,7 +171,7 @@
                 \fontsize{20pt}{0pt}{\thesisTitleEN}\\
                 \vspace{25mm}
 
-                % 使用 @{} 調整間隔空白
+                % 使用 @{} 減少間隔空白
                 \begin{tabular}{r@{}l}
                     % 研究生列
                     \fontsize{18pt}{0pt}{\makebox[6em][s]{研\hspace{\fill}究\hspace{\fill}生}：}                &
@@ -210,7 +209,7 @@
                 \fontsize{14pt}{0pt}{\thesisTitleEN}\\
                 \vspace{10mm}
 
-                % 使用 @{} 調整間隔空白
+                % 使用 @{} 減少間隔空白
                 \begin{tabular}{l@{}l}
                     % 研究生列
                     \fontsize{13pt}{0pt}{\makebox[5em][s]{研\hspace{\fill}究\hspace{\fill}生}：}                  &
@@ -636,21 +635,17 @@
 
 % 製作浮水印指令
 \newcommand{\thesisMakeWatermark}{
-    \AddToShipoutPictureBG{
-        \parbox[b][\paperheight]{\paperwidth}{
-            \vfill
-            \centering
-            \begin{tikzpicture}[remember picture, overlay]
-                \coordinate (watermarkPoint) at (current page.center);
-                \node [scale=1] at (watermarkPoint) {\includegraphics[width=3.65cm, height=3.65cm]{ \thesisWatermarkImage}};
-                \fill [fill=white, opacity=0.5]
-                ([xshift=-1.825cm, yshift=-1.825cm] watermarkPoint)
-                rectangle
-                ([xshift=1.825cm, yshift=1.825cm] watermarkPoint);
-            \end{tikzpicture}
-            \vfill
+    \ifthenelse{\equal{\thesisUseWatermark}{Y}}{
+        \backgroundsetup{
+            contents=\includegraphics{\thesisWatermarkImage},
+            firstpage=false,
+            angle=0,
+            opacity=0.5,
+            hshift=0mm,
+            vshift=0mm,
+            scale=0.1, % 大小
         }
-    }
+    }{}
 }
 
 % --------------------------------------------------

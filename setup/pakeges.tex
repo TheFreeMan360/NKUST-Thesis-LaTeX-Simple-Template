@@ -3,7 +3,6 @@
 % 工具套件
 \usepackage{ifthen} % 支援 if 條件判斷
 \usepackage{pgffor} % 支援 foreach
-% \usepackage{datetime} % 支援日期判讀
 
 % 語言與字體套件
 \usepackage[utf8]{inputenc} % 控制輸入編碼
@@ -20,7 +19,6 @@
 
 % 版面套件
 \usepackage{geometry} % 設定版面大小
-\usepackage[autostyle=true]{csquotes} % 設定引言排版
 
 % 目錄格式套件
 \usepackage{titletoc} % 設定目錄樣式
@@ -38,18 +36,19 @@
 \usepackage{enumerate} % 支援列表環境
 % \usepackage{enumitem} % 支援列表環境 (會跟 enumerate 衝突)
 % \usepackage{paralist} % 支援列表環境
+
+% \usepackage[autostyle=true]{csquotes} % 設定引號排版
 % \usepackage{footmisc} % 支援自訂註腳樣式
 
-% 插圖
-\usepackage{graphicx} % 支援插入圖片
-\usepackage{eso-pic} % 支援插入圖片於文字下方
-
-% 繪圖
+% 圖片
 \usepackage{tikz} % 支援曲線繪圖
+\usepackage{eso-pic} % 支援插入圖片於文字下方
+\usepackage{pgfplots} % 支援資料繪圖
+\usepackage{graphicx} % 支援插入圖片
+\usepackage[contents=]{background} % 支援插入浮水印，不給定 contents 就不會生成 draft 字樣
 \usepackage{amscd} % 支援繪製流程圖
 \usepackage{pict2e} % 支援繪圖
 \usepackage{picture} % 支援繪圖
-\usepackage{pgfplots} % 支援資料繪圖
 \usepackage[subpreambles]{standalone} % 支援繪圖重複利用
 
 % 表格
