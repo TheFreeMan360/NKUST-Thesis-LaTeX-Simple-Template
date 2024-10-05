@@ -96,9 +96,13 @@
 \newcommand{\thesisKeywordsZHTW}{{LaTeX},{高科},{論文},{模板}}
 \newcommand{\thesisKeywordsEN}{{LaTeX},{NKUST},{Thesis},{Template}}
 
-% 日期(月份)
-\newcommand{\thesisDateZHTW}{中華民國 一一三 年 六 月}
-\newcommand{\thesisDateEN}{June 2024} % 英文月份不得縮寫
+% 論文日期月份
+\newcommand{\thesisYearAD}{2024} % 西元年
+\newcommand{\thesisYearROC}{113} % 西元年 - 1911
+\newcommand{\thesisMonth}{7} % 月份
+
+\newcommand{\thesisDateROC}{中華民國\zhdigits{\thesisYearROC}年\zhdigits{\thesisMonth}月}
+\newcommand{\thesisDateEN}{\thesisGetMonthName{\thesisMonth} \thesisYearAD}
 
 % --------------------------------------------------
 % 路徑變數
