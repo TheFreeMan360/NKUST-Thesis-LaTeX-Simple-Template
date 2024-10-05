@@ -23,9 +23,9 @@
 
 % 中文字體 預設標楷體 BiauKai
 % 其他選項見 fonts/zhtw 欲修改使用字體全稱 
-\newcommand{\thesisFontsZHTW}{BiauKai}
-% \newcommand{\thesisFontsZHTW}{edukai-4.0}
-% \newcommand{\thesisFontsZHTW}{edusong-big5}
+\newcommand{\thesisFontsZHTW}{BiauKai} % 標楷體
+% \newcommand{\thesisFontsZHTW}{edukai-4.0} % 教育部楷體
+% \newcommand{\thesisFontsZHTW}{edusong-big5} % 教育部宋體
 
 % 是否有符號說明表 Y: 是 N: 否
 \newcommand{\thesisHasDenotation}{Y}
@@ -73,17 +73,17 @@
 \newcommand{\thesisClassNameZHTW}{\thesisDeptNameZHTW 系碩士班}
 \newcommand{\thesisClassNameEN}{Graduate Institute of \thesisDeptNameEN}
 
-% 學士學位與授予學位
+% 學士學位與授予學位(僅修正選擇學位即可)
 \newcommand{\thesisDegreeBachelorZHTW}{學士}
 \newcommand{\thesisDegreeBachelorEN}{Bachelor}
 \newcommand{\thesisConferredDegreeBachelor}{\thesisDegreeBachelorEN~of Science}
 
-% 碩士學位與授予學位
+% 碩士學位與授予學位(僅修正選擇學位即可)
 \newcommand{\thesisDegreeMasterZHTW}{碩士}
 \newcommand{\thesisDegreeMasterEN}{Master}
 \newcommand{\thesisConferredDegreeMaster}{\thesisDegreeMasterEN~of Science}
 
-% 博士學位與授予學位
+% 博士學位與授予學位(僅修正選擇學位即可)
 \newcommand{\thesisDegreeDoctorZHTW}{博士}
 \newcommand{\thesisDegreeDoctorEN}{Doctor}
 \newcommand{\thesisConferredDegreeDoctor}{\thesisDegreeDoctorEN~of Science}
@@ -145,8 +145,8 @@
 \newcommand{\thesisDenotationZHTW}{符號說明}
 \newcommand{\thesisAcknowledgementTitleZHTW}{致謝}
 
-\newcommand{\thesisChapterTitleZHTW}{\CJKnumber{\thechapter}、}
-\newcommand{\thesisChapterTitleTocZHTW}{\CJKnumber{\thecontentslabel}、~}
+\newcommand{\thesisChapterTitleZHTW}{\zhnumber{\thechapter}、}
+\newcommand{\thesisChapterTitleTocZHTW}{\zhnumber{\thecontentslabel}、~}
 
 \newcommand{\thesisBibliographyTitleZHTW}{參考文獻}
 \newcommand{\thesisAppendixTitleZHTW}{附錄}
