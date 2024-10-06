@@ -72,21 +72,26 @@
     \newcommand{\thesisBibliographyTitle}{\thesisBibliographyTitleZHTW}
     \newcommand{\thesisAppendixTitle}{\thesisAppendixTitleZHTW}
 
-    % 章標題顯示格式
-    \newcommand{\thesisChapterTitleFormat}{\thesisChapterTitleFormatZHTW}
-
-    % 章標題目錄顯示格式
-    \newcommand{\thesisChapterTitleTocFormat}{\thesisChapterTitleTocFormatZHTW}
-
-    % 附錄章標題顯示格式
-    \newcommand{\thesisAppendixTitleFormat}{\thesisAppendixTitleFormatZHTW}
-
-    % 附錄章標題目錄顯示格式
-    \newcommand{\thesisAppendixTitleTocFormat}{\thesisAppendixTitleTocFormatZHTW}
-
     % 圖表標題名
     \newcommand{\thesisFigureName}{\thesisFigureNameZHTW}
     \newcommand{\thesisTableName}{\thesisTableNameZHTW}
+
+    % 章標題顯示格式
+    \newcommand{\thesisChapterTitleFormat}{\thesisChapterTitleFormatZHTW{\thechapter}}
+    \newcommand{\thesisChapterTitleTocFormat}{\thesisChapterTitleFormatZHTW{\thecontentslabel}}
+
+    % 附錄章標題顯示格式
+    \newcommand{\thesisAppendixTitleFormat}{\thesisAppendixTitleFormatZHTW{\thechapter}}
+    \newcommand{\thesisAppendixTitleTocFormat}{\thesisAppendixTitleFormatZHTW{\thecontentslabel}}
+
+    % 節標題顯示格式
+
+    % 附錄節標題顯示格式
+
+    % 子節標題顯示格式
+
+    % 附錄子節標題顯示格式
+
 
     % 目錄排版單位(保留)
 
@@ -101,21 +106,27 @@
     \newcommand{\thesisBibliographyTitle}{\thesisBibliographyTitleEN}
     \newcommand{\thesisAppendixTitle}{\thesisAppendixTitleEN}
 
-    % 章標題顯示格式
-    \newcommand{\thesisChapterTitleFormat}{\thesisChapterTitleFormatEN}
-
-    % 章標題目錄顯示格式
-    \newcommand{\thesisChapterTitleTocFormat}{\thesisChapterTitleTocFormatEN}
-
-    % 附錄章標題顯示格式
-    \newcommand{\thesisAppendixTitleFormat}{\thesisAppendixTitleFormatEN}
-
-    % 附錄章標題目錄顯示格式
-    \newcommand{\thesisAppendixTitleTocFormat}{\thesisAppendixTitleTocFormatEN}
-
     % 圖表標題名
     \newcommand{\thesisFigureName}{\thesisFigureNameEN}
     \newcommand{\thesisTableName}{\thesisTableNameEN}
+
+    % 章標題顯示格式
+    \newcommand{\thesisChapterTitleFormat}{\thesisChapterTitleFormatEN{\thechapter}}
+    \newcommand{\thesisChapterTitleTocFormat}{\thesisChapterTitleFormatEN{\thecontentslabel}}
+
+    % 附錄章標題顯示格式
+    \newcommand{\thesisAppendixTitleFormat}{\thesisAppendixTitleFormatEN{\thechapter}}
+    \newcommand{\thesisAppendixTitleTocFormat}{\thesisAppendixTitleFormatEN{\thecontentslabel}}
+
+    % 節標題顯示格式
+
+    % 附錄節標題顯示格式
+
+    % 子節標題顯示格式
+
+    % 附錄子節標題顯示格式
+
+
 
     % 目錄排版單位(保留)
 
@@ -211,7 +222,9 @@
             \end{center}
         \end{singlespace}
     \end{titlepage}
+
     \clearpage % 清除頁碼
+    \newpage % 強制換頁
 }
 
 % 製作書名頁指令
@@ -282,7 +295,9 @@
             \end{center}
         \end{singlespace}
     \end{titlepage}
+
     \clearpage % 清除頁碼
+    \newpage % 強制換頁
 }
 
 % 中文摘要環境
@@ -345,7 +360,7 @@
         }
     }
 
-    \pagebreak % 需改
+    \newpage
 }
 
 % 英文摘要環境
@@ -405,11 +420,11 @@
             \fi%
         }
     }
-    \pagebreak % 需改
+    \newpage
 }
 
 % 致謝指令
-\newcommand{\thesisAcknowledgement}{
+\newcommand{\thesisAddAcknowledgement}{
     \chapter*{\thesisAcknowledgementTitle}
 
     \phantomsection % 目錄超連結錨點
@@ -437,7 +452,7 @@
         }
         }{
     \end{list}
-    \pagebreak % 需改
+    \newpage
 }
 
 % --------------------------------------------------
@@ -514,7 +529,7 @@
     \addcontentsline{toc}{chapter}{\thesisListOfTablesTitle}
 
     \listoftables
-    \newpage % 需改
+    \newpage
 }
 
 % 製作圖目錄指令
@@ -527,7 +542,7 @@
 
     \listoffigures
 
-    \newpage % 需改
+    \newpage
 }
 
 % --------------------------------------------------
@@ -614,7 +629,7 @@
 }
 
 \newcommand{\thesisAppendixMatter}{
-    % 使用此指令明確宣告，這之後是目錄避免超連結混亂
+    % 使用此指令明確宣告，避免目錄超連結混亂
     \appendix
 
     % 重設章節計數器
@@ -691,7 +706,7 @@
             opacity=0.5,
             hshift=0mm,
             vshift=0mm,
-            scale=0.1, % 大小
+            scale=0.1, % contents 縮放大小
         }
     }{}
 }
@@ -700,7 +715,7 @@
 % 數學、演算法設定
 % --------------------------------------------------
 
-% 演算法區塊
+% listing 設定
 \definecolor{codegreen}{rgb}{0,0.6,0}
 \definecolor{codegray}{rgb}{0.5,0.5,0.5}
 \definecolor{codepurple}{rgb}{0.58,0,0.82}
@@ -731,7 +746,7 @@
 % PDF、超連結設定
 % --------------------------------------------------
 
-% 超連結
+% hyperref 設定
 \hypersetup{
     colorlinks=true,
     linkcolor=black,
@@ -793,6 +808,8 @@
             heading = none
         ]
     }
+
+    \newpage
 }
 
 % --------------------------------------------------

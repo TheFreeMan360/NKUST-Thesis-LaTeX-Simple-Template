@@ -137,12 +137,12 @@
 % 語言變數
 % --------------------------------------------------
 
-% 中文摘要
+% 繁體中文摘要(不管怎樣都會用到，不加入選項)
 \newcommand{\thesisAbstractTitleZHTW}{摘要}
 \newcommand{\thesisKeywordsTagZHTW}{關鍵字：}
 \newcommand{\thesisKeywordsSymbolZHTW}{、}
 
-% 英文摘要
+% 英文摘要(不管怎樣都會用到，不加入選項)
 \newcommand{\thesisAbstractTitleEN}{ABSTRACT}
 \newcommand{\thesisKeywordsTagEN}{Keywords:~}
 \newcommand{\thesisKeywordsSymbolEN}{,~}
@@ -157,21 +157,25 @@
 \newcommand{\thesisBibliographyTitleZHTW}{參考文獻}
 \newcommand{\thesisAppendixTitleZHTW}{附錄}
 
-% 繁體中文章標題顯示格式
-\newcommand{\thesisChapterTitleFormatZHTW}{\zhnumber{\thechapter}、}
-
-% 繁體中文章標題目錄顯示格式
-\newcommand{\thesisChapterTitleTocFormatZHTW}{\zhnumber{\thecontentslabel}、}
-
-% 繁體中文附錄章標題顯示格式
-\newcommand{\thesisAppendixTitleFormatZHTW}{\thesisAppendixTitleZHTW\zhnumber{\thechapter}、}
-
-% 繁體中文附錄章標題目錄顯示格式
-\newcommand{\thesisAppendixTitleTocFormatZHTW}{\thesisAppendixTitleZHTW\zhnumber{\thecontentslabel}、}
-
 % 繁體中文圖表標題名
 \newcommand{\thesisFigureNameZHTW}{圖}
 \newcommand{\thesisTableNameZHTW}{表}
+
+% 繁體中文章標題顯示格式
+\newcommand{\thesisChapterTitleFormatZHTW}[1]{\zhnumber{#1}、}
+
+% 繁體中文附錄章標題顯示格式
+\newcommand{\thesisAppendixTitleFormatZHTW}[1]{\thesisAppendixTitleZHTW\zhnumber{#1}、}
+
+% 繁體中文節標題顯示格式
+
+% 繁體中文附錄節標題顯示格式
+
+% 繁體中文子節標題顯示格式
+
+% 繁體中文附錄子節標題顯示格式
+
+
 
 % 英文標題用詞
 \newcommand{\thesisOralExamApprovalTitleEN}{The Oral Examination Committee Approval}
@@ -183,21 +187,24 @@
 \newcommand{\thesisBibliographyTitleEN}{References}
 \newcommand{\thesisAppendixTitleEN}{Appendix}
 
-% 英文標題顯示格式
-\newcommand{\thesisChapterTitleFormatEN}{Chapter~\thechapter~}
-
-% 英文目錄標題顯示格式
-\newcommand{\thesisChapterTitleTocFormatEN}{Chapter~\thecontentslabel~}
-
-% 英文附錄章標題顯示格式
-\newcommand{\thesisAppendixTitleFormatEN}{\thesisAppendixTitleEN~\thechapter~}
-
-% 英文附錄章標題目錄顯示格式
-\newcommand{\thesisAppendixTitleTocFormatEN}{\thesisAppendixTitleEN~\thecontentslabel~}
-
-% 英文中文圖表標題名
+% 英文圖表標題名
 \newcommand{\thesisFigureNameEN}{Figure}
 \newcommand{\thesisTableNameEN}{Table}
+
+% 英文標題顯示格式
+\newcommand{\thesisChapterTitleFormatEN}[1]{Chapter~{#1}~}
+
+% 英文附錄章標題顯示格式
+\newcommand{\thesisAppendixTitleFormatEN}[1]{\thesisAppendixTitleEN~{#1}~}
+
+% 英文節標題顯示格式
+
+% 英文附錄節標題顯示格式
+
+% 英文子節標題顯示格式
+
+% 英文附錄子節標題顯示格式
+
 
 % --------------------------------------------------
 % 排版變數
