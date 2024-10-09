@@ -30,6 +30,7 @@
 
 1. 參考文獻格式使用 APA 但未加上方框標號
 2. APA 未符合中文文獻格式  
+3. 標題格式的邏輯可再區分為 renew 標號計數器(chapter、section)與顯示格式(Format 丟入 \thechapter、\thesection)，方便使用者自定標題格式
 
 ## 鳴謝
 

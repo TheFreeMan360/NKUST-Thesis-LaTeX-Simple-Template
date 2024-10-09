@@ -37,7 +37,7 @@
 % zhnumber 初始設定 
 \zhnumsetup{style={Traditional}} % 以繁中顯示
 
-% 預設中文字體(CJK)設定
+% xeCJK 中文字體設定
 \xeCJKsetup{
     AutoFakeBold=true, % 沒有給定粗體時使用偽粗體
     EmboldenFactor=2.5, % 偽粗體的粗度
@@ -51,7 +51,12 @@
     Extension = .ttf ,
 ]{ \thesisFontsZHTW }
 
-% 預設英文字體設定
+% fontspec 英文字體設定
+\defaultfontfeatures{
+    AutoFakeBold=2.5, % 沒有給定粗體時使用偽粗體粗度 2.5
+    AutoFakeSlant=0.2,  % 沒有給定斜體時使用偽斜體斜度 0.2
+}
+
 \setmainfont[
     Path = \thesisFontsPathEN ,
     Extension = .ttf ,
@@ -685,6 +690,23 @@
 \clubpenalty=9999 % 幾乎不允許頁面頂部僅有一行段落
 \interfootnotelinepenalty=9999 % 幾乎不允許註腳在行內斷開
 
+% enumitem 設定
+\setlist[enumerate, 1]{ % 第一層列表
+    label=\arabic*.,
+    before=\setlength{\parindent}{2em}, % 內容首行縮排
+}
+
+\setlist[enumerate, 2]{ % 第二層列表
+    label=(\arabic*),
+    before=\setlength{\parindent}{2em}, % 內容首行縮排
+}
+
+\setlist[enumerate, 3]{ % 第三層列表
+    label=\alph*.,
+    before=\setlength{\parindent}{2em}, % 內容首行縮排
+}
+
+
 % --------------------------------------------------
 % 圖表設定
 % --------------------------------------------------
@@ -751,8 +773,8 @@
     colorlinks=true,
     linkcolor=black,
     filecolor=gray,
-    anchorcolor=blue,
-    citecolor=blue
+    anchorcolor=black,
+    citecolor=black,
 }
 
 % --------------------------------------------------
