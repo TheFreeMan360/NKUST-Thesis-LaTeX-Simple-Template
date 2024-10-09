@@ -690,25 +690,35 @@
 \clubpenalty=9999 % 幾乎不允許頁面頂部僅有一行段落
 \interfootnotelinepenalty=9999 % 幾乎不允許註腳在行內斷開
 
-% enumitem 有序列表設定
-\setlist[enumerate, 1]{ % 第一層列表
+% enumitem 列表設定
+\setlist[1]{ % 第一層級列表.
+    listparindent=\parindent, % 設定首行縮排
+    leftmargin=*,
+}
+
+\setlist[2]{ % 第二層級列表
+    listparindent=\parindent, % 設定內容首行縮排
+    labelindent=\parindent, % 從標籤開始縮排
+    leftmargin=*,
+}
+
+\setlist[3]{ % 第三層級列表
+    listparindent=\parindent, % 設定內容首行縮排
+    labelindent=\parindent, % 從標籤開始縮排
+    leftmargin=*,
+}
+
+\setlist[enumerate, 1]{ % 第一層有序列表
     label=\arabic*., % 樣式為 1.
-    listparindent=\parindent, % 設定首行縮排
-    leftmargin=*,
 }
 
-\setlist[enumerate, 2]{ % 第二層列表
+\setlist[enumerate, 2]{ % 第二層有序列表
     label=(\arabic*), % 樣式為 (1)
-    listparindent=\parindent, % 設定首行縮排
-    leftmargin=*,
 }
 
-\setlist[enumerate, 3]{ % 第三層列表
+\setlist[enumerate, 3]{ % 第三層有序列表
     label=\alph*., % 樣式為 a.
-    listparindent=\parindent, % 設定首行縮排
-    leftmargin=*,
 }
-
 
 % --------------------------------------------------
 % 圖表設定
