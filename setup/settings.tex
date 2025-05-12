@@ -65,78 +65,6 @@
     BoldItalicFont = *-BoldItalic,
 ]{Times New Roman}
 
-% 撰寫語言選項
-\ifthenelse{\equal{\thesisUseZHTW}{Y}}{
-    % 標題用詞
-    \newcommand{\thesisOralExamApprovalTitle}{\thesisOralExamApprovalTitleZHTW}
-    \newcommand{\thesisTableOfContentsTitle}{\thesisTableOfContentsTitleZHTW}
-    \newcommand{\thesisListOfFiguresTitle}{\thesisListOfFiguresTitleZHTW}
-    \newcommand{\thesisListOfTablesTitle}{\thesisListOfTablesTitleZHTW}
-    \newcommand{\thesisDenotationTitle}{\thesisDenotationTitleZHTW}
-    \newcommand{\thesisAcknowledgementTitle}{\thesisAcknowledgementTitleZHTW}
-    \newcommand{\thesisBibliographyTitle}{\thesisBibliographyTitleZHTW}
-    \newcommand{\thesisAppendixTitle}{\thesisAppendixTitleZHTW}
-
-    % 圖表標題名
-    \newcommand{\thesisFigureName}{\thesisFigureNameZHTW}
-    \newcommand{\thesisTableName}{\thesisTableNameZHTW}
-
-    % 章標題顯示格式
-    \newcommand{\thesisChapterTitleFormat}{\thesisChapterTitleFormatZHTW{\thechapter}}
-    \newcommand{\thesisChapterTitleTocFormat}{\thesisChapterTitleFormatZHTW{\thecontentslabel}}
-
-    % 附錄章標題顯示格式
-    \newcommand{\thesisAppendixTitleFormat}{\thesisAppendixTitleFormatZHTW{\thechapter}}
-    \newcommand{\thesisAppendixTitleTocFormat}{\thesisAppendixTitleFormatZHTW{\thecontentslabel}}
-
-    % 節標題顯示格式
-
-    % 附錄節標題顯示格式
-
-    % 子節標題顯示格式
-
-    % 附錄子節標題顯示格式
-
-
-    % 目錄排版單位(保留)
-
-}{
-    % 英文章節、標題、目錄等用詞
-    \newcommand{\thesisOralExamApprovalTitle}{\thesisOralExamApprovalTitleEN}
-    \newcommand{\thesisTableOfContentsTitle}{\thesisTableOfContentsTitleEN}
-    \newcommand{\thesisListOfFiguresTitle}{\thesisListOfFiguresTitleEN}
-    \newcommand{\thesisListOfTablesTitle}{\thesisListOfTablesTitleEN}
-    \newcommand{\thesisDenotationTitle}{\thesisDenotationTitleEN}
-    \newcommand{\thesisAcknowledgementTitle}{\thesisAcknowledgementTitleEN}
-    \newcommand{\thesisBibliographyTitle}{\thesisBibliographyTitleEN}
-    \newcommand{\thesisAppendixTitle}{\thesisAppendixTitleEN}
-
-    % 圖表標題名
-    \newcommand{\thesisFigureName}{\thesisFigureNameEN}
-    \newcommand{\thesisTableName}{\thesisTableNameEN}
-
-    % 章標題顯示格式
-    \newcommand{\thesisChapterTitleFormat}{\thesisChapterTitleFormatEN{\thechapter}}
-    \newcommand{\thesisChapterTitleTocFormat}{\thesisChapterTitleFormatEN{\thecontentslabel}}
-
-    % 附錄章標題顯示格式
-    \newcommand{\thesisAppendixTitleFormat}{\thesisAppendixTitleFormatEN{\thechapter}}
-    \newcommand{\thesisAppendixTitleTocFormat}{\thesisAppendixTitleFormatEN{\thecontentslabel}}
-
-    % 節標題顯示格式
-
-    % 附錄節標題顯示格式
-
-    % 子節標題顯示格式
-
-    % 附錄子節標題顯示格式
-
-
-
-    % 目錄排版單位(保留)
-
-}
-
 % 取得月份英文
 \newcommand{\thesisGetMonthName}[1]{%
     \ifcase#1
@@ -665,13 +593,6 @@
 % --------------------------------------------------
 % 內文設定
 % --------------------------------------------------
-
-% 設定中文行距為 1，英文行距為 1.5
-\ifthenelse{\equal{\thesisUseZHTW}{Y}}{
-    \linespread{1}
-}{
-    \linespread{1.5}
-}
 
 % 設定段落首行縮排
 \setlength{\parindent}{2em}

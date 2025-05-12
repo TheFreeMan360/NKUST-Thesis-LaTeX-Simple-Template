@@ -22,10 +22,6 @@
 \newcommand{\thesisUseWatermark}{Y}
 % \newcommand{\thesisUseWatermark}{N}
 
-% 是否使用中文撰寫 Y: 是 N: 否
-\newcommand{\thesisUseZHTW}{Y}
-% \newcommand{\thesisUseZHTW}{N}
-
 % 中文字體 預設標楷體 BiauKai
 % 其他選項見 fonts/zhtw 欲修改使用字體全稱 
 \newcommand{\thesisFontsZHTW}{BiauKai} % 標楷體
@@ -137,71 +133,100 @@
 % 語言變數
 % --------------------------------------------------
 
-% 繁體中文摘要(不管怎樣都會用到，不加入選項)
+% 繁體中文摘要(不管怎樣都會用到)
 \newcommand{\thesisAbstractTitleZHTW}{摘要}
 \newcommand{\thesisKeywordsTagZHTW}{關鍵字：}
 \newcommand{\thesisKeywordsSymbolZHTW}{、}
 
-% 英文摘要(不管怎樣都會用到，不加入選項)
+% 英文摘要(不管怎樣都會用到)
 \newcommand{\thesisAbstractTitleEN}{ABSTRACT}
 \newcommand{\thesisKeywordsTagEN}{Keywords:~}
 \newcommand{\thesisKeywordsSymbolEN}{,~}
 
+% ------ 繁體中文用詞(若使用中文解開以下變數註解) -----
+
+% 繁體中文行高
+\linespread{1}
+
 % 繁體中文標題用詞
-\newcommand{\thesisOralExamApprovalTitleZHTW}{口試委員審定書}
-\newcommand{\thesisAcknowledgementTitleZHTW}{致謝}
-\newcommand{\thesisTableOfContentsTitleZHTW}{目錄}
-\newcommand{\thesisListOfFiguresTitleZHTW}{圖目錄}
-\newcommand{\thesisListOfTablesTitleZHTW}{表目錄}
-\newcommand{\thesisDenotationTitleZHTW}{符號說明}
-\newcommand{\thesisBibliographyTitleZHTW}{參考文獻}
-\newcommand{\thesisAppendixTitleZHTW}{附錄}
+\newcommand{\thesisOralExamApprovalTitle}{口試委員審定書}
+\newcommand{\thesisAcknowledgementTitle}{致謝}
+\newcommand{\thesisTableOfContentsTitle}{目錄}
+\newcommand{\thesisListOfFiguresTitle}{圖目錄}
+\newcommand{\thesisListOfTablesTitle}{表目錄}
+\newcommand{\thesisDenotationTitle}{符號說明}
+\newcommand{\thesisBibliographyTitle}{參考文獻}
+\newcommand{\thesisAppendixTitle}{附錄}
 
 % 繁體中文圖表標題名
-\newcommand{\thesisFigureNameZHTW}{圖}
-\newcommand{\thesisTableNameZHTW}{表}
+\newcommand{\thesisFigureName}{圖}
+\newcommand{\thesisTableName}{表}
+
+% 繁體中文所有章節標題顯示格式
+\newcommand{\thesisTitleFormat}[1]{\zhnumber{#1}、}
 
 % 繁體中文章標題顯示格式
-\newcommand{\thesisChapterTitleFormatZHTW}[1]{\zhnumber{#1}、}
+% 內文
+\newcommand{\thesisChapterTitleFormat}{\thesisTitleFormat{\thechapter}}
+% 目錄
+\newcommand{\thesisChapterTitleTocFormat}{\thesisTitleFormat{\thecontentslabel}}
 
 % 繁體中文附錄章標題顯示格式
-\newcommand{\thesisAppendixTitleFormatZHTW}[1]{\thesisAppendixTitleZHTW\zhnumber{#1}、}
+% 內文
+\newcommand{\thesisAppendixTitleFormat}{\thesisAppendixTitle\thesisTitleFormat{\thechapter}}
+% 目錄
+\newcommand{\thesisAppendixTitleTocFormat}{\thesisAppendixTitle\thesisTitleFormat{\thecontentslabel}}
 
-% 繁體中文節標題顯示格式
+% 繁體中文節標題顯示格式(保留)
 
-% 繁體中文附錄節標題顯示格式
+% 繁體中文附錄節標題顯示格式(保留)
 
-% 繁體中文子節標題顯示格式
+% 繁體中文子節標題顯示格式(保留)
 
-% 繁體中文附錄子節標題顯示格式
+% 繁體中文附錄子節標題顯示格式(保留)
+
+
+% ---------- 英文用詞(若使用英文解開以下變數註解) --------
+
+% 英文行高
+% \linespread{1.5}
 
 % 英文標題用詞
-\newcommand{\thesisOralExamApprovalTitleEN}{The Oral Examination Committee Approval}
-\newcommand{\thesisTableOfContentsTitleEN}{Contents}
-\newcommand{\thesisListOfFiguresTitleEN}{List of Figures}
-\newcommand{\thesisListOfTablesTitleEN}{List of Tables}
-\newcommand{\thesisDenotationTitleEN}{Denotation}
-\newcommand{\thesisAcknowledgementTitleEN}{Acknowledgements}
-\newcommand{\thesisBibliographyTitleEN}{References}
-\newcommand{\thesisAppendixTitleEN}{Appendix}
+% \newcommand{\thesisOralExamApprovalTitle}{The Oral Examination Committee Approval}
+% \newcommand{\thesisTableOfContentsTitle}{Contents}
+% \newcommand{\thesisListOfFiguresTitle}{List of Figures}
+% \newcommand{\thesisListOfTablesTitle}{List of Tables}
+% \newcommand{\thesisDenotationTitle}{Denotation}
+% \newcommand{\thesisAcknowledgementTitle}{Acknowledgements}
+% \newcommand{\thesisBibliographyTitle}{References}
+% \newcommand{\thesisAppendixTitle}{Appendix}
 
 % 英文圖表標題名
-\newcommand{\thesisFigureNameEN}{Figure}
-\newcommand{\thesisTableNameEN}{Table}
+% \newcommand{\thesisFigureName}{Figure}
+% \newcommand{\thesisTableName}{Table}
 
-% 英文標題顯示格式
-\newcommand{\thesisChapterTitleFormatEN}[1]{Chapter~{#1}~}
+% 英文所有章節標題顯示格式
+% \newcommand{\thesisTitleFormat}[1]{~{#1}~}
+
+% 英文章標題顯示格式
+% 內文
+% \newcommand{\thesisChapterTitleFormat}{Chapter\thesisTitleFormat{\thechapter}}
+% 目錄
+% \newcommand{\thesisChapterTitleTocFormat}{Chapter\thesisTitleFormat{\thecontentslabel}}
 
 % 英文附錄章標題顯示格式
-\newcommand{\thesisAppendixTitleFormatEN}[1]{\thesisAppendixTitleEN~{#1}~}
+% 內文
+% \newcommand{\thesisAppendixTitleFormat}{\thesisAppendixTitle\thesisTitleFormat{\thechapter}}
+% 目錄
+% \newcommand{\thesisAppendixTitleTocFormat}{\thesisAppendixTitle\thesisTitleFormat{\thecontentslabel}}
 
-% 英文節標題顯示格式
+% 英文節標題顯示格式(保留)
 
-% 英文附錄節標題顯示格式
+% 英文附錄節標題顯示格式(保留)
 
-% 英文子節標題顯示格式
+% 英文子節標題顯示格式(保留)
 
-% 英文附錄子節標題顯示格式
+% 英文附錄子節標題顯示格式(保留)
 
 
 % --------------------------------------------------
