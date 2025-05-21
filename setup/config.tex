@@ -38,7 +38,7 @@
 % \newcommand{\thesisShowBoardLine}{N}
 
 % 是否區分中英文獻 Y: 是 N: 否
-% 若要使用，references.bib 中文文獻需要確實設定 keyword={chinese} 
+% 若要使用此選項，則 references.bib 中的中文文獻需要確實設定 keyword={chinese}
 \newcommand{\thesisSplitBIBByLang}{Y}
 % \newcommand{\thesisSplitBIBByLang}{N}
 
@@ -104,7 +104,7 @@
 \newcommand{\thesisMonth}{7} % 月份數字
 
 \newcommand{\thesisDateROC}{中華民國\zhdigits{\thesisYearROC}年\zhdigits{\thesisMonth}月}
-\newcommand{\thesisDateEN}{\thesisGetMonthName{\thesisMonth} \thesisYearAD}
+\newcommand{\thesisDateEN}{\thesisGetMonthName{\thesisMonth}~\thesisYearAD}
 
 % --------------------------------------------------
 % 路徑變數
@@ -227,7 +227,6 @@
 % 英文子節標題顯示格式(保留)
 
 % 英文附錄子節標題顯示格式(保留)
-
 
 % --------------------------------------------------
 % 排版變數
