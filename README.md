@@ -2,6 +2,10 @@
 
 本專案為**國立高雄科技大學論文 LaTeX 精簡模板**，是擷取 Yuhao-Kuo 等人製作的[國立高雄科技大學研究所論文 LaTeX 模板](https://github.com/yuhao-kuo/NKUST-thesis-template)及 Hsins 等人的[國立台灣大學研究所論文 LaTeX 模板](https://github.com/Hsins/NTU-Thesis-LaTeX-Template) 進行改作的模板，格式參照[國立高雄科技大學教務處學位論文撰寫體例參考(中華民國111年3月修訂版)](https://acad.nkust.edu.tw/var/file/4/1004/img/212/F-2-35.docx)。
 
+## 現況
+
+本專案仍在開發中
+
 ## 開發環境
 
 本專案在 Windows 11 中使用 MikTex + Strrawberry Perl + VSC(LaTeX Workshop) 能夠正常編譯，其他環境尚需測試。
@@ -30,9 +34,8 @@
 
 1. 參考文獻格式使用 APA 但未加上方框標號
 2. APA 未符合中文文獻格式
-3. 圖表標題有章節間距
-4. 標題格式的邏輯可再區分為 renew 標號計數器(chapter、section)與顯示格式(Format 丟入 \thechapter、\thesection)，方便使用者自定標題格式
-5. 語言變數邏輯可以簡化，若非前頁需使用，可以只放 config 變數
+3. 圖表標題會產生章節間距
+4. 附錄標題的編號方式未與標題分開
 
 ## 鳴謝
 
