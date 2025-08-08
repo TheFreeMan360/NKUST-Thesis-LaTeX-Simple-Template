@@ -148,6 +148,9 @@
 % 繁體中文行高
 \linespread{1}
 
+% 繁體中文章節標題間隔
+\newcommand{\thesisTitleGapSize}{0em}
+
 % 繁體中文標題用詞
 \newcommand{\thesisOralExamApprovalTitle}{口試委員審定書}
 \newcommand{\thesisAcknowledgementTitle}{致謝}
@@ -188,10 +191,13 @@
 
 % ---------- 英文用詞(若使用英文解開以下變數註解) --------
 
-% 英文行高
+% % 英文行高
 % \linespread{1.5}
 
-% 英文標題用詞
+% % 英文章節標題間隔大小
+% \newcommand{\thesisTitleGapSize}{1em}
+
+% % 英文標題用詞
 % \newcommand{\thesisOralExamApprovalTitle}{The Oral Examination Committee Approval}
 % \newcommand{\thesisTableOfContentsTitle}{Contents}
 % \newcommand{\thesisListOfFiguresTitle}{List of Figures}
@@ -201,24 +207,24 @@
 % \newcommand{\thesisBibliographyTitle}{References}
 % \newcommand{\thesisAppendixTitle}{Appendix}
 
-% 英文圖表標題名
+% % 英文圖表標題名
 % \newcommand{\thesisFigureName}{Figure}
 % \newcommand{\thesisTableName}{Table}
 
-% 英文所有章節標題顯示格式
-% \newcommand{\thesisTitleFormat}[1]{~{#1}~}
+% % 英文所有章節標題顯示格式
+% \newcommand{\thesisTitleFormat}[1]{~{#1}}
 
-% 英文章標題顯示格式
-% 內文
+% % 英文章標題顯示格式
+% % 內文
 % \newcommand{\thesisChapterTitleFormat}{Chapter\thesisTitleFormat{\thechapter}}
-% 目錄
-% \newcommand{\thesisChapterTitleTocFormat}{Chapter\thesisTitleFormat{\thecontentslabel}}
+% % 目錄
+% \newcommand{\thesisChapterTitleTocFormat}{Chapter\thesisTitleFormat{\thecontentslabel}\hspace{\thesisTitleGapSize}}
 
-% 英文附錄章標題顯示格式
-% 內文
+% % 英文附錄章標題顯示格式
+% % 內文
 % \newcommand{\thesisAppendixTitleFormat}{\thesisAppendixTitle\thesisTitleFormat{\thechapter}}
-% 目錄
-% \newcommand{\thesisAppendixTitleTocFormat}{\thesisAppendixTitle\thesisTitleFormat{\thecontentslabel}}
+% % 目錄
+% \newcommand{\thesisAppendixTitleTocFormat}{\thesisAppendixTitle\thesisTitleFormat{\thecontentslabel}\hspace{\thesisTitleGapSize}}
 
 % 英文節標題顯示格式(保留)
 

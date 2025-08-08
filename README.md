@@ -29,10 +29,10 @@
 ## 本專案仍可改進之處
 
 1. 參考文獻格式使用 APA 但未加上方框標號
-2. APA 未符合中文文獻格式  
-3. 標題格式的邏輯可再區分為 renew 標號計數器(chapter、section)與顯示格式(Format 丟入 \thechapter、\thesection)，方便使用者自定標題格式
-4. 圖表標題有章節間距
-5. 語言變數邏輯可以簡化，若非前頁接需使用，可以只放 config 變數
+2. APA 未符合中文文獻格式
+3. 圖表標題有章節間距
+4. 標題格式的邏輯可再區分為 renew 標號計數器(chapter、section)與顯示格式(Format 丟入 \thechapter、\thesection)，方便使用者自定標題格式
+5. 語言變數邏輯可以簡化，若非前頁需使用，可以只放 config 變數
 
 ## 鳴謝
 
