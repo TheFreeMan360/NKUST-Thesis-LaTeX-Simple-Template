@@ -35,7 +35,7 @@
 % 內文套件
 \usepackage{indentfirst} % 設定首行縮排
 \usepackage{setspace} % 設定行距（標題內文分別設定）
-% \usepackage{enumerate} % 支援列表環境
+% \usepackage{enumerate} % 支援列表環境(會跟 enumitem 衝突)
 \usepackage{enumitem} % 支援列表環境 (會跟 enumerate 衝突)
 % \usepackage{paralist} % 支援列表環境
 
@@ -44,8 +44,8 @@
 
 % 圖片
 \usepackage{tikz} % 支援曲線繪圖
-\usepackage{eso-pic} % 支援插入圖片於文字下方
 \usepackage{pgfplots} % 支援資料繪圖
+\usepackage{eso-pic} % 支援插入圖片於文字下方
 \usepackage{graphicx} % 支援插入圖片
 \usepackage[contents=]{background} % 支援插入浮水印，不給定 contents 就不會生成 draft 字樣
 \usepackage{amscd} % 支援繪製流程圖
@@ -62,7 +62,7 @@
 \usepackage{multirow} % 支援合併儲存格
 \usepackage{longtable} % 支援跨頁表格
 \usepackage{tabularx} % 支援插入表格
-\usepackage{threeparttable} % 增強表格排版
+\usepackage{threeparttable} % 增強表格排版(註解區塊)
 \usepackage{xltabular} % 支援自我適應跨頁表格
 
 % 數學

@@ -125,6 +125,10 @@
                 \fontsize{26pt}{0pt}{\thesisDeptNameZHTW 系}\\
                 \vspace{5mm}
                 \fontsize{24pt}{0pt}{\thesisDegreeZHTW 論文}\\
+                \ifthenelse{\equal{\thesisIsDraft}{Y}}{
+                    \vspace{5mm}
+                    \fontsize{16pt}{0pt}{初稿(Draft)}\\
+                }{}
                 \vspace{30mm}
 
                 % 題目
