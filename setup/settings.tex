@@ -413,7 +413,7 @@
 
 \titlecontents{chapter}[0em]
 {}
-{\thesisChapterTitleTocFormat} % 須改中英間距於 config
+{\thesisChapterTitleTocFormat} % 須改中英顯示間距於 config
 {}
 {\titlerule*[0.5pc]{.}\contentspage}
 {}
@@ -753,7 +753,7 @@
     \addcontentsline{toc}{chapter}{\thesisBibliographyTitle} % 加入目錄
 
     % 插入參考文獻
-    \ifthenelse{\equal{\thesisSplitBIBByLang}{Y}}{
+    \ifthenelse{\equal{\thesisSplitRefByLang}{Y}}{
         \section*{中文部分}
         \printbibliography[
             keyword={chinese},

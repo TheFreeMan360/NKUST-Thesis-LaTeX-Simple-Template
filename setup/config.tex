@@ -32,15 +32,15 @@
 \newcommand{\thesisHasDenotation}{Y}
 % \newcommand{\thesisHasDenotation}{N}
 
+% 是否區分中英文獻 Y: 是 N: 否
+% 若要使用此選項，則 references.bib 中的中文文獻需要確實設定 keyword={chinese}
+\newcommand{\thesisSplitRefByLang}{Y}
+% \newcommand{\thesisSplitRefByLang}{N}
+
 % 是否顯示邊界線 Y: 顯示 N: 不顯示
 % 顯示邊界線可以在撰寫時幫助判斷內容顯示範圍
 \newcommand{\thesisShowBoardLine}{Y}
 % \newcommand{\thesisShowBoardLine}{N}
-
-% 是否區分中英文獻 Y: 是 N: 否
-% 若要使用此選項，則 references.bib 中的中文文獻需要確實設定 keyword={chinese}
-\newcommand{\thesisSplitBIBByLang}{Y}
-% \newcommand{\thesisSplitBIBByLang}{N}
 
 % --------------------------------------------------
 % 論文基本資訊
@@ -54,7 +54,7 @@
 \newcommand{\thesisAdvisorNameZHTW}{芙利蓮}
 \newcommand{\thesisAdvisorNameEN}{Frieren}
 
-% 共同指導教授(有共指需要修改)
+% 共同指導教授(若有共指需要修改)
 \newcommand{\thesisCoAdvisorNameZHTW}{費倫}
 \newcommand{\thesisCoAdvisorNameEN}{Fern}
 
@@ -63,7 +63,7 @@
 \newcommand{\thesisSchoolNameEN}{National Kaohsiung University of Science and Technology}
 \newcommand{\thesisSchoolLocationEN}{Kaohsiung, Taiwan, Republic of China}
 
-% 學院
+% 學院(保留)
 % \newcommand{\thesisCollegeNameZHTW}{工學院}
 % \newcommand{\thesisCollegeNameEN}{College of Engineering}
 
@@ -107,38 +107,16 @@
 \newcommand{\thesisDateEN}{\thesisGetMonthName{\thesisMonth}~\thesisYearAD}
 
 % --------------------------------------------------
-% 路徑變數
-% --------------------------------------------------
-
-% 審定書、授權書、推薦書
-\newcommand{\thesisOralExamApprovalPDF}{./front/oral_exam_approval.pdf}
-\newcommand{\thesisPowerOfAttorneyPDF}{./front/power_of_attorney.pdf}
-\newcommand{\thesisAdvisorRecommendationPDF}{}
-
-% 參考文獻
-\newcommand{\thesisRefBIB}{./back/references.bib}
-
-% 字體檔案
-\newcommand{\thesisFontsPathZHTW}{./fonts/zhtw/}
-\newcommand{\thesisFontsPathEN}{./fonts/en/}
-
-% 圖片根目錄
-\newcommand{\thesisFiguresPath}{./figures}
-
-% 校徽與浮水印
-\newcommand{\thesisSealImage}{./figures/seal/seal_golden.png}
-\newcommand{\thesisWatermarkImage}{./figures/seal/seal_golden.png}
-
-% --------------------------------------------------
 % 語言變數
 % --------------------------------------------------
 
-% 繁體中文摘要(不管怎樣都會用到)
+% 繁體中文摘要
+% 摘要中英兩邊都要有，所以用詞必須分開列出
 \newcommand{\thesisAbstractTitleZHTW}{摘要}
 \newcommand{\thesisKeywordsTagZHTW}{關鍵字：}
 \newcommand{\thesisKeywordsSymbolZHTW}{、}
 
-% 英文摘要(不管怎樣都會用到)
+% 英文摘要
 \newcommand{\thesisAbstractTitleEN}{ABSTRACT}
 \newcommand{\thesisKeywordsTagEN}{Keywords:~}
 \newcommand{\thesisKeywordsSymbolEN}{,~}
@@ -233,6 +211,29 @@
 % 英文子節標題顯示格式(保留)
 
 % 英文附錄子節標題顯示格式(保留)
+
+% --------------------------------------------------
+% 路徑變數(盡量勿動)
+% --------------------------------------------------
+
+% 審定書、授權書、推薦書
+\newcommand{\thesisOralExamApprovalPDF}{./front/oral_exam_approval.pdf}
+\newcommand{\thesisPowerOfAttorneyPDF}{./front/power_of_attorney.pdf}
+\newcommand{\thesisAdvisorRecommendationPDF}{}
+
+% 參考文獻
+\newcommand{\thesisRefBIB}{./back/references.bib}
+
+% 字體檔案
+\newcommand{\thesisFontsPathZHTW}{./fonts/zhtw/}
+\newcommand{\thesisFontsPathEN}{./fonts/en/}
+
+% 圖片根目錄
+\newcommand{\thesisFiguresPath}{./figures}
+
+% 校徽與浮水印
+\newcommand{\thesisSealImage}{./figures/seal/seal_golden.png}
+\newcommand{\thesisWatermarkImage}{./figures/seal/seal_golden.png}
 
 % --------------------------------------------------
 % 排版變數

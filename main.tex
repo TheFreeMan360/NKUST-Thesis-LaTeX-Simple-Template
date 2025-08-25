@@ -48,7 +48,7 @@
 % 封面
 \thesisMakeCoverPage
 
-% 加入浮水印，有選就會加
+% 加入浮水印，config 有選就會加
 \thesisMakeWatermark
 
 % 書名頁
@@ -67,7 +67,7 @@
         \includepdf[width=1.0\textwidth]{\thesisOralExamApprovalPDF}
     }{}
 
-    % 博士論文推薦書(僅博士需要，推薦書檔案需存在)
+    % 博士論文推薦書(僅博士需要，推薦書檔案路徑需於 congig 設定)
     \ifthenelse{\equal{\thesisDegreeType}{PHD}}{
         \includepdf[width=1.0\textwidth]{\thesisAdvisorRecommendationPDF}
     }{}
