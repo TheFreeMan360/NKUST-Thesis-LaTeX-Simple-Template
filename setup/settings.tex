@@ -507,6 +507,9 @@
 % - right（可選）: 標題右邊的缩排（一般很少用）。
 % --------------------------------------------------
 
+% 設定章標題編號方式
+\renewcommand{\thechapter}{\thesisChapterTitleNumbering{chapter}}
+
 % 設定章標題樣式
 \titleformat{\chapter}
 {\centering\LARGE}
@@ -515,6 +518,9 @@
 {}
 
 \titlespacing*{\chapter}{0pt}{0pt}{12pt} % 設定章標題下方留空一行
+
+% 設定節標題編號方式
+\renewcommand{\thesection}{\thesisSectionTitleNumbering{chapter}{section}}
 
 % 設定節標題樣式
 \titleformat*{\section}{\Large}
@@ -572,11 +578,11 @@
     % 重設章節計數器
     \setcounter{chapter}{0}
 
-    % 將附錄章編號設回數字
-    \renewcommand{\thechapter}{\arabic{chapter}}
+    % 設定章標題編號方式
+    \renewcommand{\thechapter}{\thesisAppendixChapterTitleNumbering{chapter}}
 
     % 將附錄節編號設回數字
-    \renewcommand{\thesection}{\arabic{chapter}.\arabic{section}}
+    \renewcommand{\thesection}{\thesisAppendixSectionTitleNumbering{chapter}{section}}
 
     % 重設章目錄樣式
     \titlecontents{chapter}[0em]

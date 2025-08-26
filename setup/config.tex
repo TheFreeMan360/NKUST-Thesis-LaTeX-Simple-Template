@@ -143,20 +143,29 @@
 \newcommand{\thesisFigureName}{圖}
 \newcommand{\thesisTableName}{表}
 
-% 繁體中文所有章節標題顯示格式
-\newcommand{\thesisTitleFormat}[1]{\zhnumber{#1}、}
+% 繁體中文章標題編號格式，參考 zhnumber counters
+% 內文，參數：#1 => 章計數器值(chapter)
+\newcommand{\thesisChapterTitleNumbering}[1]{\zhnum{#1}}
+% 附錄，參數：#1 => 章計數器值(chapter)
+\newcommand{\thesisAppendixChapterTitleNumbering}[1]{\zhnum{#1}}
+
+% 繁體中文節標題編號格式
+% 內文，參數：#1 => 章計數器值(chapter)、#2 => 節計數器值(section)
+\newcommand{\thesisSectionTitleNumbering}[2]{\arabic{#1}.\arabic{#2}}
+% 附錄，參數：#1 => 章計數器值(chapter)、#2 => 節計數器值(section)
+\newcommand{\thesisAppendixSectionTitleNumbering}[2]{\arabic{#1}.\arabic{#2}}
 
 % 繁體中文章標題顯示格式
 % 內文
-\newcommand{\thesisChapterTitleFormat}{\thesisTitleFormat{\thechapter}}
+\newcommand{\thesisChapterTitleFormat}{\thechapter、}
 % 目錄
-\newcommand{\thesisChapterTitleTocFormat}{\thesisTitleFormat{\thecontentslabel}}
+\newcommand{\thesisChapterTitleTocFormat}{\thecontentslabel、}
 
 % 繁體中文附錄章標題顯示格式
 % 內文
-\newcommand{\thesisAppendixTitleFormat}{\thesisAppendixTitle\thesisTitleFormat{\thechapter}}
+\newcommand{\thesisAppendixTitleFormat}{\thesisAppendixTitle\thechapter、}
 % 目錄
-\newcommand{\thesisAppendixTitleTocFormat}{\thesisAppendixTitle\thesisTitleFormat{\thecontentslabel}}
+\newcommand{\thesisAppendixTitleTocFormat}{\thesisAppendixTitle\thecontentslabel、}
 
 % 繁體中文節標題顯示格式(保留)
 
@@ -189,20 +198,29 @@
 % \newcommand{\thesisFigureName}{Figure}
 % \newcommand{\thesisTableName}{Table}
 
-% % 英文所有章節標題顯示格式
-% \newcommand{\thesisTitleFormat}[1]{~{#1}}
+% % 英文章標題編號格式，參考 LaTeX 內建 counters
+% % 內文，參數：#1 => 章計數器值(chapter)
+% \newcommand{\thesisChapterTitleNumbering}[1]{\arabic{#1}}
+% % 附錄，參數：#1 => 章計數器值(chapter)
+% \newcommand{\thesisAppendixChapterTitleNumbering}[1]{\Alph{#1}}
+
+% % 英文節標題編號格式，參考 LaTeX 內建 counters
+% % 內文，參數：#1 => 章計數器值(chapter)、#2 => 節計數器值(section)
+% \newcommand{\thesisSectionTitleNumbering}[2]{\arabic{#1}.\arabic{#2}}
+% % 附錄，參數：#1 => 章計數器值(chapter)、#2 => 節計數器值(section)
+% \newcommand{\thesisAppendixSectionTitleNumbering}[2]{\Alph{#1}.\arabic{#2}}
 
 % % 英文章標題顯示格式
 % % 內文
-% \newcommand{\thesisChapterTitleFormat}{Chapter\thesisTitleFormat{\thechapter}}
+% \newcommand{\thesisChapterTitleFormat}{Chapter~\thechapter}
 % % 目錄
-% \newcommand{\thesisChapterTitleTocFormat}{Chapter\thesisTitleFormat{\thecontentslabel}\hspace{\thesisTitleGapSize}}
+% \newcommand{\thesisChapterTitleTocFormat}{Chapter~\thecontentslabel\hspace{\thesisTitleGapSize}}
 
 % % 英文附錄章標題顯示格式
 % % 內文
-% \newcommand{\thesisAppendixTitleFormat}{\thesisAppendixTitle\thesisTitleFormat{\thechapter}}
+% \newcommand{\thesisAppendixTitleFormat}{\thesisAppendixTitle~\thechapter}
 % % 目錄
-% \newcommand{\thesisAppendixTitleTocFormat}{\thesisAppendixTitle\thesisTitleFormat{\thecontentslabel}\hspace{\thesisTitleGapSize}}
+% \newcommand{\thesisAppendixTitleTocFormat}{\thesisAppendixTitle~\thecontentslabel\hspace{\thesisTitleGapSize}}
 
 % 英文節標題顯示格式(保留)
 

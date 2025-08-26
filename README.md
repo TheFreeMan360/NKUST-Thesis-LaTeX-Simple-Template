@@ -6,20 +6,31 @@
 
 本專案仍在開發中
 
-## 開發環境
+## 使用
+
+### 使用流程
+
+1. 直接下載或 Git clone 本專案到本地電腦
+2. LaTeX 開發環境設定
+3. 編譯指令設定
+4. 修改 setup/config.tex 中的必要資訊與選項
+5. 開始撰寫您的論文內容
+
+### LaTeX 開發環境設定
+
+#### Windows
 
 本專案在 Windows 11 中使用 MikTex + Strrawberry Perl + VSC(LaTeX Workshop) 能夠正常編譯，其他環境尚需測試。
 
-## 使用
+#### Mac
 
-本專案使用 xelaTeX + biblaTeX 製作
+#### Linux
 
-### 如何開始?
+### 編譯指令設定
 
-1. 下載本專案
-2. 修改 setup/config.tex 中的必要資訊與選項
-3. 撰寫內容
-4. 編譯 main.tex
+- 由於 LaTeX 本身限制，加入 BibLaTeX 文獻管理後，編譯指令會較為繁瑣，因此需要另做設定
+
+#### 直接使用命令列進行編譯
 
    ```
    cd [專案資料夾路徑]
@@ -30,12 +41,18 @@
    xelatex main
    ```
 
+#### Vscode + LaTeX Workshop (推薦)
+
+#### Make
+
+### 檔案結構說明
+
+### config.tex 的調整
+
 ## 本專案仍可改進之處
 
 1. 參考文獻格式使用 APA 但未加上方框標號
-2. APA 未符合中文文獻格式
-3. 圖表目錄會產生章節間距
-4. 附錄標題的編號方式未與標題分開
+2. 圖表目錄會產生章節間距
 
 ## 鳴謝
 
