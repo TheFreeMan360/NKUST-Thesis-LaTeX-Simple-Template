@@ -1,6 +1,6 @@
 # 國立高雄科技大學論文 LaTeX 精簡模板<br>(NKUST Thesis LaTeX Simple Template)
 
-本專案為**國立高雄科技大學論文 LaTeX 精簡模板**，是擷取 Yuhao-Kuo 等人製作的[國立高雄科技大學研究所論文 LaTeX 模板](https://github.com/yuhao-kuo/NKUST-thesis-template)及 Hsins 等人的[國立台灣大學研究所論文 LaTeX 模板](https://github.com/Hsins/NTU-Thesis-LaTeX-Template) 進行改作的模板，格式參照[國立高雄科技大學教務處學位論文撰寫體例參考(中華民國111年3月修訂版)](https://acad.nkust.edu.tw/var/file/4/1004/img/212/F-2-35.docx)。
+本專案為**國立高雄科技大學論文 LaTeX 精簡模板**，是擷取 Yuhao-Kuo 等人製作的 [國立高雄科技大學研究所論文 LaTeX 模板](https://github.com/yuhao-kuo/NKUST-thesis-template) 及 Hsins 等人的 [國立台灣大學研究所論文 LaTeX 模板](https://github.com/Hsins/NTU-Thesis-LaTeX-Template) 進行改作的模板，格式參照 [國立高雄科技大學教務處學位論文撰寫體例參考(中華民國111年3月修訂版)](https://acad.nkust.edu.tw/var/file/4/1004/img/212/F-2-35.docx)。
 
 ## 開發現況
 
@@ -54,8 +54,8 @@ C:.
 |       abstract_zhtw.tex
 |       aknowlegement.tex
 |       denotation.tex
-|       oral_exam_approval.pdf
-|       power_of_attorney.pdf
+|       oral_exam_approval.pdf # 口試審定書
+|       power_of_attorney.pdf # 論文授權書
 |       
 \---setup # 所有專案設定
         config.tex
@@ -63,35 +63,53 @@ C:.
         settings.tex
 ```
 
-- 若您對於 LaTeX 的語法不熟悉，建議您不要更動除「本專案 `setup/config.tex` 中論文必要資訊與選項調整」所提以外的本專案提供內容
+> [!IMPORTANT]  
+> 若您對於 LaTeX 的語法不熟悉，建議您不要更動除「本專案 `setup/config.tex` 中論文必要資訊與選項調整」所提以外的本專案提供內容
 
 ### 本專案使用流程
 
-1. 直接下載 zip 檔或使用 `git clone` 本專案至您的電腦
+1. 直接下載 zip 檔解壓縮或使用 `git clone` 本專案至您的電腦
 2. LaTeX 開發環境設定
 3. XeLaTeX + BibLaTeX 編譯指令設定
 4. 修改本專案 `setup/config.tex` 中的論文必要資訊與選項
-5. 開始撰寫您的論文內容，若有其它欲調整處，請見專案註解
+5. 開始撰寫您的論文內容，若有其它欲調整處，請見專案中註解
 
 ### LaTeX 開發環境設定
 
+- 因為專案規模大小問題，不建議使用如 [Overleaf](https://www.overleaf.com/) 這樣的雲端網頁服務編譯。
+- 如果您會使用 [Git](https://git-scm.com/) 進行版本控制，LaTeX 搭配 Git 使用，那是非常棒的，Very Beautiful，Very Powerful。
+
 #### 本專案開發環境
 
-以下列出本專案開發環境，其它環境尚待測試，但應是理論可用的
+以下列出本專案開發環境，其它環境尚需測試，但應是理論可用的。
 
 - 作業系統：Windows 11
 - LaTeX 編譯器：[MikTex](https://miktex.org/)
-- 編輯環境：[Vscode](https://code.visualstudio.com/) + [LaTeX Workshop](https://marketplace.visualstudio.com/items?itemName=James-Yu.latex-workshop) + [Strawberry Perl](https://strawberryperl.com/)
+- 編輯環境：
+  - [Visual Studio Code](https://code.visualstudio.com/)
+  - [LaTeX Workshop](https://marketplace.visualstudio.com/items?itemName=James-Yu.latex-workshop)
+  - [Strawberry Perl](https://strawberryperl.com/)：配合 MikTex 編譯所需
 
-#### Windows
+#### 安裝編譯器
 
-#### Mac
+以下列出各作業系統可用的編譯器以供參考。
 
-#### Linux
+- Windows
+  - [MikTex](https://miktex.org/)：本專案推薦
+  - [TeXlive](https://www.tug.org/texlive/)
+
+- Mac
+  - [MacTeX](https://www.tug.org/mactex/)
+  - [MikTex](https://miktex.org/)
+  - [TeXlive](https://www.tug.org/texlive/)
+
+- Linux
+  - [MikTex](https://miktex.org/)
+  - [TeXlive](https://www.tug.org/texlive/)
 
 ### XeLaTeX + BibLaTeX 編譯指令設定
 
-本專案使用 XeLaTeX 與 BibLaTeX(Biber) 進行文獻管理，由於 LaTeX 本身限制，編譯指令會較為繁瑣，因此建議另做設定，在編譯使用上才會更為方便。
+本專案使用 XeLaTeX 與 BibLaTeX(Biber) 進行文獻管理，由於 LaTeX 本身限制，編譯指令會較為繁瑣，因此建議另做設定，在編譯上才會更為方便。
 
 #### 直接使用命令列進行編譯(不建議)
 
@@ -104,9 +122,142 @@ C:.
    xelatex main
    ```
 
-#### Vscode + LaTeX Workshop (建議)
+#### Vscode + LaTeX Workshop Recipe (建議)
+
+1. 下載 Vscode 並安裝 [LaTeX Workshop Extension](https://marketplace.visualstudio.com/items?itemName=James-Yu.latex-workshop)
+2. 在 Vscode 中，利用 `ctrl + shift + p` 快捷鍵，輸入`Preference： Open User Settings(JSON)`，打開 `settings.josn`
+3. 在`settings.josn`中加入以下 JSON
+4. 之後便可在開啟 `main.tex` 時，切換至 LaTeX Workshop 面版進行編譯
+
+```json
+  // LaTeX
+  "[latex]": {
+    "editor.defaultFormatter": "James-Yu.latex-workshop"
+  },
+
+  "latex-workshop.view.pdf.viewer": "tab", // 選擇pdf瀏覽器，可選browser/tab/external
+  "latex-workshop.latex.autoBuild.run": "never", // 不要自動編譯
+  "latex-workshop.formatting.latex": "latexindent", // 設定 forrmatter
+
+  // 設定 LaTeX 編譯工具指令
+  "latex-workshop.latex.tools": [
+    {
+      "name": "xelatex",
+      "command": "xelatex",
+      "args": [
+        "-synctex=1",
+        "-interaction=nonstopmode",
+        "-file-line-error",
+        "%DOC%"
+      ]
+    },
+    {
+      "name": "xelatex-with-shell-escape",
+      "command": "xelatex",
+      "args": [
+        "--shell-escape",
+        "-synctex=1",
+        "-interaction=nonstopmode",
+        "-file-line-error",
+        "%DOC%"
+      ]
+    },
+    {
+      "name": "pdflatex",
+      "command": "pdflatex",
+      "args": [
+        "-synctex=1",
+        "-interaction=nonstopmode",
+        "-file-line-error",
+        "%DOC%"
+      ]
+    },
+    {
+      "name": "pdflatex-with-shell-escape",
+      "command": "pdflatex",
+      "args": [
+        "--shell-escape",
+        "-synctex=1",
+        "-interaction=nonstopmode",
+        "-file-line-error",
+        "%DOC%"
+      ]
+    },
+    {
+      "name": "latexmk",
+      "command": "latexmk",
+      "args": [
+        "-synctex=1",
+        "-interaction=nonstopmode",
+        "-file-line-error",
+        "-pdf",
+        "%DOC%"
+      ]
+    },
+    {
+      "name": "bibtex",
+      "command": "bibtex",
+      "args": ["%DOCFILE%"]
+    },
+    {
+      "name": "biber",
+      "command": "biber",
+      "args": ["%DOCFILE%"]
+    },
+    {
+      "name": "makeindex",
+      "command": "makeindex",
+      "args": ["%DOCFILE%"]
+    }
+  ],
+
+  // 選擇 LaTeX 編譯工具的指令，以及工具的順序
+  "latex-workshop.latex.recipes": [
+    //　目前只使用 xelatex 和 biber
+    {
+      "name": "xelatex",
+      "tools": ["xelatex"]
+    },
+    {
+      "name": "xelatex -> biber -> xelatex*2",
+      "tools": ["xelatex", "biber", "xelatex", "xelatex"]
+    }
+  ],
+
+  // 每次編譯前，刪除之前的output檔
+  "latex-workshop.latex.clean.enableed": true,
+  "latex-workshop.latex.clean.fileTypes": [
+    "*.aux",
+    "*.bbl",
+    "*.blg",
+    "*.idx",
+    "*.ind",
+    "*.lof",
+    "*.lot",
+    "*.out",
+    "*.toc",
+    "*.acn",
+    "*.acr",
+    "*.alg",
+    "*.glg",
+    "*.glo",
+    "*.gls",
+    "*.ist",
+    "*.fls",
+    "*.log",
+    "*.fdb_latexmk"
+  ],
+```
+
+> [!NOTE]  
+> 以上內容參考自
+> 陳宥廷. (2021, April 10). *VS Code 下的 LaTeX 環境設定*. HackMD. <https://hackmd.io/@DextinChen/VSCode-LaTeX-setting>.
+> Kaibaooo. (2022, August 12). *使用 VSCode 上撰寫中文 Latex 文件*. Kaibaooo’s Note. <https://kaibaoom.tw/posts/notes/vscode-latex/>.
+> 邱繼群. (2022, September 16). *Latex*. HackMD. <https://hackmd.io/@m7Thna5ET3KEdtU32Lsk3g/r1XI4_KSK>.
 
 #### Makefile
+
+- 適合進階使用者自行研究
 
 ### 本專案 `setup/config.tex` 中論文必要資訊與選項調整
 
