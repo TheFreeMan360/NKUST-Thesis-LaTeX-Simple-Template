@@ -737,6 +737,27 @@
 % biblatex 加入參考文獻檔案位置
 \addbibresource{\thesisRefBIB}
 
+% 設定中外文參考文獻篩選標準
+\defbibcheck{thesisRefZh}{%
+    \ifboolexpr{
+        test {\iffieldequalstr{langid}{chinese}}
+        or
+        test {\iffieldequalstr{langid}{zh}}
+    }
+    {}{\skipentry}%
+}
+
+\defbibcheck{thesisRefOtherLang}{%
+    \ifboolexpr{
+        not(
+        test {\iffieldequalstr{langid}{chinese}}
+        or
+        test {\iffieldequalstr{langid}{zh}}
+        )
+    }
+    {}{\skipentry}%
+}
+
 % biblatex 修改英文參考文獻顯示符號
 
 % \DefineBibliographyStrings{english}{
@@ -766,13 +787,13 @@
     \ifthenelse{\equal{\thesisSplitRefByLang}{Y}}{
         \section*{中文部分}
         \printbibliography[
-            keyword={chinese},
+            check=thesisRefZh,
             heading=none,
         ]
 
         \section*{外文部分}
         \printbibliography[
-            notkeyword={chinese},
+            check=thesisRefOtherLang,
             heading=none,
         ]
     }{

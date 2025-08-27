@@ -84,7 +84,7 @@ C:.
 以下列出本專案開發環境，其它環境尚需測試，但應是理論可用的。
 
 - 作業系統：Windows 11
-- LaTeX 編譯器：[MikTex](https://miktex.org/)
+- LaTeX 編譯器：[MikTeX](https://miktex.org/)
 - 編輯環境：
   - [Visual Studio Code](https://code.visualstudio.com/)
   - [LaTeX Workshop](https://marketplace.visualstudio.com/items?itemName=James-Yu.latex-workshop)
@@ -95,16 +95,16 @@ C:.
 以下列出各作業系統可用的編譯器以供參考。
 
 - Windows
-  - [MikTex](https://miktex.org/)：本專案推薦
+  - [MikTeX](https://miktex.org/)：本專案推薦
   - [TeXlive](https://www.tug.org/texlive/)
 
 - Mac
   - [MacTeX](https://www.tug.org/mactex/)
-  - [MikTex](https://miktex.org/)
+  - [MikTeX](https://miktex.org/)
   - [TeXlive](https://www.tug.org/texlive/)
 
 - Linux
-  - [MikTex](https://miktex.org/)
+  - [MikTeX](https://miktex.org/)
   - [TeXlive](https://www.tug.org/texlive/)
 
 ### XeLaTeX + BibLaTeX 編譯指令設定
@@ -251,8 +251,11 @@ C:.
 
 > [!NOTE]  
 > 以上內容參考自
+>
 > 陳宥廷. (2021, April 10). *VS Code 下的 LaTeX 環境設定*. HackMD. <https://hackmd.io/@DextinChen/VSCode-LaTeX-setting>.
+>
 > Kaibaooo. (2022, August 12). *使用 VSCode 上撰寫中文 Latex 文件*. Kaibaooo’s Note. <https://kaibaoom.tw/posts/notes/vscode-latex/>.
+>
 > 邱繼群. (2022, September 16). *Latex*. HackMD. <https://hackmd.io/@m7Thna5ET3KEdtU32Lsk3g/r1XI4_KSK>.
 
 #### Makefile
