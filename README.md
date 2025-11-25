@@ -81,7 +81,9 @@ C:.
 
 - 作業系統：Windows 11
 - LaTeX 編譯器：[MikTeX](https://miktex.org/)
-- 編輯環境：
+- LaTeX 發行版：XeLaTeX
+- LaTeX 文獻管理套件：BibLaTeX(Biber)
+- 編輯器環境：
   - [Visual Studio Code](https://code.visualstudio.com/)
   - [LaTeX Workshop](https://marketplace.visualstudio.com/items?itemName=James-Yu.latex-workshop)
   - [Strawberry Perl](https://strawberryperl.com/)：配合 MikTex 編譯所需
