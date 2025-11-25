@@ -469,6 +469,8 @@
     \phantomsection
     \addcontentsline{toc}{chapter}{\thesisListOfTablesTitle}
 
+    \renewcommand{\addvspace}[1]{} % 暫時讓 addvspace 指令失效
+
     \listoftables
     \newpage
 }
@@ -480,6 +482,8 @@
     % 加入目錄與目錄超連結
     \phantomsection
     \addcontentsline{toc}{chapter}{\thesisListOfFiguresTitle}
+
+    \renewcommand{\addvspace}[1]{} % 暫時讓 addvspace 指令失效
 
     \listoffigures
 
